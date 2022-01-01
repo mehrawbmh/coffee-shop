@@ -9,5 +9,6 @@ class Cashier(db.Model):
     password = db.Column(db.VARCHAR(20))
 
 
-
+    def __repr__(self):
+        return f"id is {self.id} :name : {self.first_name} {self.last_name}"
 
