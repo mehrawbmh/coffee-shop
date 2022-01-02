@@ -4,11 +4,11 @@ class Cashier(db.Model):
     id = db.Column(db.Integer, primery_key=True)
     first_name = db.Column(db.String(40))
     last_name = db.Column(db.String(40))
-    phone_number = db.Column(db.VARCHAR(20), unique=True)
-    email = db.Column(db.VARCHAR(50), unique=True)
-    password = db.Column(db.VARCHAR(20))
-
+    phone_number = db.Column(db.String(20), unique=True)
+    email = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(30))
 
     def __repr__(self):
         return f"id is {self.id} :name : {self.first_name} {self.last_name}"
 
+db.create_all()

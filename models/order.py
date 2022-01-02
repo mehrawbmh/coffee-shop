@@ -11,3 +11,5 @@ class Order(db.Model):
 
     def __str__(self):
         return f"Order: id>{self.id} | item>{self.menu_item} | table number>{self.table}"
+
+db.create_all()
