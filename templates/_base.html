@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{% block language %} fa-IR {% endblock %}">
+<head>
+    {% include 'meta_tags.html' %}
+    <title>{% block title %} {{ page.title }} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}">
+    {% block links %}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    {% endblock %}
+    {% block sytle %}{% endblock %}
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% include 'header.html' %}
+    {% block body %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+    {% block extra_footer %} {% endblock %}
+</body>
+</html>
