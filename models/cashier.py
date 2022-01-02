@@ -11,4 +11,3 @@ class Cashier(db.Model):
     def __repr__(self):
         return f"id is {self.id} :name : {self.first_name} {self.last_name}"
 
-db.create_all()
