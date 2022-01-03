@@ -8,3 +8,11 @@ class MenuItems(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
     discount = db.Column(db.Integer)
     img_url = db.Column(db.String(200))
+
+    def __repr__(self):
+        return f" id:{self.id} => name {self.name}"
+
+    @staticmethod
+    def item_price(item_id:int):
+        menu_item = MenuItems.query.filter_by(id=f'{item_id}').first()
+        return menu_item.price
