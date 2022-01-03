@@ -6,10 +6,8 @@ class Order(db.Model):
     number = db.Column('number', db.INTEGER, default=1)
     timestamp = db.Column('timestamp', db.TIMESTAMP)
     status = db.Column('status', db.String(40))
-    table = db.Column('table', db.Integer(), db.ForeignKey('table.id'), nullable=False)
-    menu_item = db.Column('item', db.String(30), db.ForeignKey('menu_item.id'), nullable=False)
+    table = db.Column(db.Integer, db.ForeignKey('table.id'), nullable=False)
+    menu_item = db.Column(db.Integer, db.ForeignKey('menu_items.id'), nullable=False)
 
     def __str__(self):
         return f"Order: id>{self.id} | item>{self.menu_item} | table number>{self.table}"
-
-db.create_all()
