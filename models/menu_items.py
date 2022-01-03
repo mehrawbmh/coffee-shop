@@ -8,5 +8,3 @@ class MenuItems(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
     discount = db.Column(db.Integer)
     img_url = db.Column(db.String(200))
-
-db.create_all()
