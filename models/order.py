@@ -1,5 +1,5 @@
 from app import db
-
+from models.menu_items import MenuItems
 
 class Order(db.Model):
     id = db.Column('id', db.Integer, primary_key=True)
@@ -11,3 +11,9 @@ class Order(db.Model):
 
     def __str__(self):
         return f"Order: id>{self.id} | item>{self.menu_item} | table number>{self.table}"
+
+    @staticmethod
+    def order_price(order_id):
+        order = Order.query.filter_by(id=f'{order_id}').first()
+        order_price = order.number * MenuItems.item_price(order.menu_item)
+        return order_price
