@@ -2,6 +2,15 @@ from app import db
 from models.menu_items import MenuItems
 
 class Order(db.Model):
+    """
+    Order status can be one of these modes:
+    -submitted
+    -cooking
+    -serving
+    -paid
+    -canceled
+
+    """
     id = db.Column('id', db.Integer, primary_key=True)
     number = db.Column('number', db.INTEGER, default=1)
     timestamp = db.Column('timestamp', db.TIMESTAMP)

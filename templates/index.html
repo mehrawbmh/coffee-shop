@@ -17,9 +17,13 @@
 
 {% block sytle %}
     <style>
+        body{
+            padding:0;
+        }
         #main_body {
             background-color: rgb(227, 214, 199);
-            padding-top: 20px;
+            {#padding-top: 20px;#}
+            padding: 0;
         }
 
         #bottom_body {
@@ -57,10 +61,12 @@
         }
 
         #bottom_body p {
-            direction: rtl;
-            color: goldenrod;
+            direction: ltr;
+            text-align: center;
+            font-size: large;
+            color: #810e0e;
             font-weight: bold;
-            text-shadow: 1px 1px green;
+            {#text-shadow: 1px 1px green;#}
             padding: 15px 25px 15px 25px;
         }
 
@@ -74,7 +80,7 @@
     <div class="container-fluid" id="main_body">
     <div class="row">
         <h5 class="beautiful_font">
-            Our Coffee shop
+            Enjoy Our Coffee shop
         </h5>
         <h2 style="text-align: center; width: 100%;font-family:Impact, serif">
             Our Delicious Menu
@@ -82,8 +88,8 @@
         <hr style="width: 50%; border-color: #0c63e4; height: 8px; margin-bottom: 10px; border-style: dotted">
     </div>
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-2 p-0"></div>
+        <div class="col-8 p-0">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -95,21 +101,21 @@
                         <img class="d-block w-100 slide_img"
                              src="{{ url_for('static', filename='pictures/coffee1.jpg') }}" alt="First slide">
                         <div class="carousel-caption">
-                            <h5 class="nova badge badge-primary">Coffee1</h5>
+                            <h5 class="nova badge badge-primary">Late Coffee</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 slide_img"
                              src="{{ url_for('static', filename='pictures/coffee2.jpg') }}" alt="Second slide">
                         <div class="carousel-caption">
-                            <h5 class="nova badge badge-primary">Coffee2</h5>
+                            <h5 class="nova badge badge-primary">French Coffee</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100 slide_img"
                              src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="Third slide">
                         <div class="carousel-caption">
-                            <h5 class="nova badge badge-primary">Coffee3</h5>
+                            <h5 class="nova badge badge-primary">Turkish Coffee</h5>
                         </div>
                     </div>
                 </div>
@@ -135,14 +141,11 @@
         <h3 style="text-align: center;width: 100%">Oreo Shake with caramel cream</h3>
         <hr style="width: 80%; border-color: #0162ea; height: 8px; margin-bottom: 10px; border-style:dashed;!important;">
         <p>
-            این شیک پیشنهاد مخصوص ماست.به صورت انحصاری توسط کافه زشت برای شما طراحی شده است و امیدواریم از طعم آن لذت
-            ببرید.
-            این شیک پیشنهاد مخصوص ماست.به صورت انحصاری توسط کافه زشت برای شما طراحی شده است و امیدواریم از طعم آن لذت
-            ببرید.
-            این شیک پیشنهاد مخصوص ماست.به صورت انحصاری توسط کافه زشت برای شما طراحی شده است و امیدواریم از طعم آن لذت
-            ببرید.
-            این شیک پیشنهاد مخصوص ماست.به صورت انحصاری توسط کافه زشت برای شما طراحی شده است و امیدواریم از طعم آن لذت
-            ببرید.
+            Our special offer for you is this shake. It has a great taste. you gotta try it!
+        </p>
+        <br>
+        <p>
+            You hava several choices to order. You can see our menu below:
         </p>
         <div class="row" style="display: flex; justify-content: space-around">
             <div class="col-5">

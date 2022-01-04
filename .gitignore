@@ -1,3 +1,4 @@
 .idea/
 venv/
 templates/bootstrap.min.css
+__pycache__/

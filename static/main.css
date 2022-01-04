@@ -2,8 +2,7 @@
     /*background-color: darkblue;*/
     padding-right: 30px;
 }
-h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover{
-    background-color: black;
-    color:red!important;
-    border-radius: 10px 10px;
+h2:hover{
+    color: red !important;
+    text-shadow: 2px 2px black;
 }
