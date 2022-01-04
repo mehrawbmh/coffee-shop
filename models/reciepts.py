@@ -1,6 +1,5 @@
-from app import db
+from config import db
 from models.order import Order
-
 
 class Receipts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
