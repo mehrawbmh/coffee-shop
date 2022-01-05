@@ -1,6 +1,6 @@
 import argparse
 from models.cashier import Cashier
-from app import db
+from config import db
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request, url_for, escape
-
-# from models.comment import Comment
+from config import db
+from models.comment import Comment
 
 basic_data = {
     'title': '~ cafe Game&Taste ~',
@@ -19,5 +19,8 @@ def get_comment():
     email = escape(request.form.get('email'))
     message = escape(request.form.get('message'))
     # print(name, phone, email, message)
-    # comment_obj = Comment(name, message, email, phone=phone)
+    comment_obj = Comment(name, message, email, phone=phone)
+    db.session.add(comment_obj)
+    db.session.commit()
+
     return redirect(url_for('index'))

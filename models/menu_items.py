@@ -1,5 +1,4 @@
-from app import db
-
+from config import db
 
 class MenuItems(db.Model):
     id = db.Column(db.Integer, primary_key=True)

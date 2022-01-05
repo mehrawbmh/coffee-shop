@@ -1,6 +1,5 @@
-from app import db
+from config import db
 from models.menu_items import MenuItems
-
 class Order(db.Model):
     """
     Order status can be one of these modes:
