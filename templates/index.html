@@ -83,7 +83,7 @@
 {% block body %}
 
 <div class="container-fluid p-0">
-    <!--   metnu items   -->
+    <!--   metnu items header  -->
     <div class="container-fluid p-0 base-color">
         <div class="row p-0">
             <div class="col p-0">
@@ -97,7 +97,29 @@
             </div>
         </div>
     </div>
-<!--        end menu items-->
+<!--        end menu items header-->
+    <div class="container-fluid base-color justify-content-around">
+        <div class="row">
+            <div class="col">
+                <a href="#">
+                    <img src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="">
+                    <img src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="80px">
+                </a>
+            </div>
+
+            <div class="col">
+                <a href="#">
+                    <img src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
+                </a>
+            </div>
+
+        </div>
+    </div>
 
 <!--        carousel    -->
     <div class="container-fluid base-color p-0">
