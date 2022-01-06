@@ -103,19 +103,19 @@
 	<div class="row base-color">
 		<div class="col-12 col-md-4 col-lg-4 text-center">
 			<a href="#">
-				<img src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
+				<img data-toggle="tooltip" data-placement="top" title="Drink Menu" src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
 			</a>
 		</div>
 
 		<div class="col-12 col-md-4 col-lg-4 text-center">
 			<a href="">
-				<img src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
+				<img data-toggle="tooltip" data-placement="top" title="Dessert Menu" src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
 			</a>
 		</div>
 
 		<div class="col-12 col-md-4 col-lg-4 text-center">
 			<a href="#">
-				<img src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
+				<img data-toggle="tooltip" data-placement="top" title="Food Menu" src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
 			</a>
 		</div>
 
@@ -180,6 +180,9 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
     <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         var map = L.map('map').setView([29.642285, 52.459856], 13);
         var marker = L.marker([29.642285, 52.459856]).addTo(map);
         marker.bindPopup("<b>this is our cafe</b>").openPopup();
