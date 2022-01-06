@@ -102,19 +102,19 @@
 <div class="container-fluid base-color p-0 ">
 	<div class="row base-color">
 		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="#">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
 				<img data-toggle="tooltip" data-placement="top" title="Drink Menu" src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
 			</a>
 		</div>
 
 		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
 				<img data-toggle="tooltip" data-placement="top" title="Dessert Menu" src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
 			</a>
 		</div>
 
 		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="#">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
 				<img data-toggle="tooltip" data-placement="top" title="Food Menu" src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
 			</a>
 		</div>
@@ -122,6 +122,47 @@
 	</div>
 </div>
 <!--end Menu-->
+
+<!--menu collapse-->
+<div class="container-fluid p-0">
+    <div class="row base-color">
+        <div class="col">
+            <div class="collapse" id="menuCollapse">
+              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
+                  <div class="container-fluid">
+                      <div class="row justify-content-between">
+                          <div class="col-12 col-md-2 align-self-center">
+                              <input type="button" class="btn btn-dark" value="order">
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-6">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
+                          </div>
+                          <div class="col-12 col-md-2 col-lg-2">
+                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white">
+                  <div class="container-fluid">
+                      <div class="row justify-content-between">
+                          <div class="col-12 col-md-2 align-self-center">
+                              <input type="button" class="btn btn-dark" value="order">
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-6">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
+                          </div>
+                          <div class="col-12 col-md-2 col-lg-2">
+                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end menu collapse-->
 
 <!--  menu offer slide show cards -->
 <div class="container-fluid p-0">
