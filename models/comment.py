@@ -1,5 +1,6 @@
 from config import db
 
+
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     field = db.Column(db.String(40), default='message')
@@ -18,4 +19,4 @@ class Comment(db.Model):
     def __str__(self):
         return f"Comment number {self.id}: sender_name:{self.name}"
 
-db.create_all()
+# db.create_all()

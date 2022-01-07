@@ -18,7 +18,6 @@ def get_comment():
     phone = escape(request.form.get('phone'))
     email = escape(request.form.get('email'))
     message = escape(request.form.get('message'))
-    # print(name, phone, email, message)
     comment_obj = Comment(name, message, email, phone=phone)
     db.session.add(comment_obj)
     db.session.commit()
