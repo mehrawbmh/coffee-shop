@@ -28,7 +28,6 @@
         }
         #bottom_body {
             padding-top: 40px;
-            background-color: #E7DECE;
             padding-bottom: 30px;
         }
 
@@ -45,18 +44,19 @@
             font-family: "Merienda", serif;
             color: brown;
             padding-top: 20px;
-            width: 100%;
+            width: 100%; /* test it later*/
         }
 
-        .slide_img {
-            width: 100%;
-            height: auto;
-        }
+        /*.slide_img {*/
+        /*    width: 100%;*/
+        /*    height: auto;*/
+        /*}*/
 
-        .nova {
-            color: white;
-            font-family: Nova Flat, serif;
-        }
+        /*.nova {*/
+        /*    color: white;*/
+        /*    font-family: Nova Flat, serif;*/
+        /*}*/
+
         #bottom_body p {
             direction: ltr;
             text-align: center;
@@ -79,74 +79,95 @@
     </style>
 
 {% endblock %}
+
 {% block body %}
 
-<div class="container-fluid p-0">
-    <!--   metnu items   -->
-    <div class="container-fluid p-0 base-color">
-        <div class="row p-0">
-            <div class="col p-0">
-                <h5 class="beautiful_font">
+<!-- menu header-->
+<div class="container-fluid  p-0">
+    <div class="row base-color">
+        <div class="col-12">
+               <h5 class="beautiful_font">
                     Enjoy Our Coffee shop
                 </h5>
                 <h2 style="text-align: center; width: 100%;font-family:Impact, serif">
                     Our Delicious Menu
                 </h2>
                 <hr style="width: 50%; border-color: #0c63e4; height: 8px; margin-bottom: 10px; border-style: dotted">
+        </div>
+    </div>
+</div>
+<!--end menu header-->
+
+<!-- Menu -->
+<div class="container-fluid base-color p-0 ">
+	<div class="row base-color">
+		<div class="col-12 col-md-4 col-lg-4 text-center">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
+				<img data-toggle="tooltip" data-placement="top" title="Drink Menu" src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
+			</a>
+		</div>
+
+		<div class="col-12 col-md-4 col-lg-4 text-center">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
+				<img data-toggle="tooltip" data-placement="top" title="Dessert Menu" src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
+			</a>
+		</div>
+
+		<div class="col-12 col-md-4 col-lg-4 text-center">
+			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
+				<img data-toggle="tooltip" data-placement="top" title="Food Menu" src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
+			</a>
+		</div>
+
+	</div>
+</div>
+<!--end Menu-->
+
+<!--menu collapse-->
+<div class="container-fluid p-0">
+    <div class="row base-color">
+        <div class="col">
+            <div class="collapse" id="menuCollapse">
+              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
+                  <div class="container-fluid">
+                      <div class="row justify-content-between">
+                          <div class="col-12 col-md-2 align-self-center">
+                              <input type="button" class="btn btn-dark" value="order">
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-6">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
+                          </div>
+                          <div class="col-12 col-md-2 col-lg-2">
+                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white">
+                  <div class="container-fluid">
+                      <div class="row justify-content-between">
+                          <div class="col-12 col-md-2 align-self-center">
+                              <input type="button" class="btn btn-dark" value="order">
+                          </div>
+                          <div class="col-12 col-md-6 col-lg-6">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
+                          </div>
+                          <div class="col-12 col-md-2 col-lg-2">
+                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
-<!--        end menu items-->
+</div>
+<!--end menu collapse-->
 
-<!--        carousel    -->
-    <div class="container-fluid base-color p-0">
-        <div class="row justify-content-center" id="top_body" style="margin-right: 0!important;margin-left: 0!important;">
-            <div class="col-8 p-0 ">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner p-0">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100 slide_img"
-                                 src="{{ url_for('static', filename='pictures/coffee1.jpg') }}" alt="First slide">
-                            <div class="carousel-caption">
-                                <h5 class="nova badge badge-primary">Late Coffee</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100 slide_img"
-                                 src="{{ url_for('static', filename='pictures/coffee2.jpg') }}" alt="Second slide">
-                            <div class="carousel-caption">
-                                <h5 class="nova badge badge-primary">French Coffee</h5>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100 slide_img"
-                                 src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="Third slide">
-                            <div class="carousel-caption">
-                                <h5 class="nova badge badge-primary">Turkish Coffee</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--  menu offer slide show cards -->
+<div class="container-fluid p-0">
 
-<!-- end    carousel-->
-
-    <div class="row" id="bottom_body">
+    <div class="row base-color" id="bottom_body">
     <div class="col-4">
         <img src="{{ url_for('static', filename='pictures/shake1.jpg') }}" alt="shake" id="img_day">
         <h5 style="text-align: center" class="card-title bg-light text-danger">Special Shake</h5>
@@ -188,9 +209,8 @@
         </div>
     </div>
     </div>
-
 </div>
-
+<!--  end menu offer slide show cards -->
 
 {% endblock %}
 
@@ -201,6 +221,9 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
     <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
         var map = L.map('map').setView([29.642285, 52.459856], 13);
         var marker = L.marker([29.642285, 52.459856]).addTo(map);
         marker.bindPopup("<b>this is our cafe</b>").openPopup();

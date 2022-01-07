@@ -12,6 +12,8 @@
 
 </head>
 <body>
+
+<div class="container-fluid">
     {% include 'navbar.html' %}
     {% include 'header.html' %}
     {% block body %}
@@ -19,6 +21,7 @@
 
     {% include 'footer.html' %}
     {% include 'map.html' %}
+</div>
     {% block extra_footer %} {% endblock %}
     {% block js_end %}{% endblock %}
 </body>
