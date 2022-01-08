@@ -12,8 +12,8 @@ def create_cashier():
     username = input('>>> Username: ')
     hash_func.update(bytes(getpass('>>> Password: '), 'utf-8'))
     password = hash_func.hexdigest()
-    phone = input('>>> Phone number: [must be unique]')
-    email = input('>>> Email [optional]: [must be unique]')
+    phone = input('>>> Phone number [must be unique]: ')
+    email = input('>>> Email [must be unique]: ')
     firstname = ''
     lastname = ''
     if password and username:
