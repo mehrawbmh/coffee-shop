@@ -18,6 +18,7 @@ def create_cashier():
     phone = ''
     if password:
         try:
+            username = 'cashier' if username == '' else username
             user_cashier = Cashier(username=username, password=password, email=email, phone_number=phone,
                                    first_name=firstname, last_name=lastname)
             db.session.add(user_cashier)
