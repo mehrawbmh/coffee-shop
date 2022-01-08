@@ -9,13 +9,13 @@ hash_func = hashlib.sha256()
 
 @app.cli.command('create-cashier')
 def create_cashier():
-    username = input('>>> Username : ')
+    username = input('>>> Username: ')
     hash_func.update(bytes(getpass('>>> Password: '), 'utf-8'))
     password = hash_func.hexdigest()
-    email = input('>>> Email [optional]: ')
+    phone = input('>>> Phone number: [must be unique]')
+    email = input('>>> Email [optional]: [must be unique]')
     firstname = ''
     lastname = ''
-    phone = ''
     if password and username:
         try:
             user_cashier = Cashier(username=username, password=password, email=email, phone_number=phone,
@@ -24,4 +24,4 @@ def create_cashier():
             db.session.commit()
             return 'user cashier successfully created'
         except SQLAlchemyError as err:
-            return err
+            return str((err.__dict__['orig']))
