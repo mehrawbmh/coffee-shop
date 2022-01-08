@@ -4,13 +4,22 @@ from models.comment import Comment
 
 basic_data = {
     'title': '~ cafe Game&Taste ~',
-    'language': 'en-US'
-
+    'language': 'en-US',
+    'sexes': [
+        {
+            'name': 1,
+            'price': 122
+        },
+        {
+            'name': 33,
+            'price': 332
+        }
+    ]
 }
 
 
 def index():
-    return render_template('index.html', data=basic_data)
+    return render_template('index.html', data={**basic_data})
 
 
 def get_comment():
