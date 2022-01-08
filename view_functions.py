@@ -5,7 +5,7 @@ from models.comment import Comment
 basic_data = {
     'title': '~ cafe Game&Taste ~',
     'language': 'en-US',
-    'sexes': [
+    'menu_data': [
         {
             'name': 1,
             'price': 122

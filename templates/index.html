@@ -185,12 +185,11 @@
         </p>
 
         <div class="row" style="display: flex; justify-content: space-around">
-            {% for sex in data.sexes %}
+            {% for item in data.menu_data %}
                 <div class="col-5">
                     <ul style="list-style-image:url({{ url_for('static', filename='pictures/star-fill.svg') }});direction: ltr ">
-                        <li style="font-weight: bold;font-size:larger">{{ sex.name }}</li>
-                        <li>{{ sex.price }}</li>
-                        <li>sex</li>
+                        <li style="font-weight: bold;font-size:larger">{{ item.name }}</li>
+                        <li>{{ item.price }}</li>
                     </ul>
                 </div>
             {% endfor %}
