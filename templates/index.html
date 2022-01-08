@@ -183,30 +183,19 @@
         <p id="menu">
             You hava several choices to order. You can see our menu below:
         </p>
+
         <div class="row" style="display: flex; justify-content: space-around">
-            <div class="col-5">
-                <ul style="list-style-image:url({{ url_for('static', filename='pictures/star-fill.svg') }});direction: ltr ">
-                    <li style="font-weight: bold;font-size:larger">Food and Dessert</li>
-                    <li>French fries</li>
-                    <li>Shake</li>
-                    <li>Pizza</li>
-                    <li>Water</li>
-                    <li>Cake</li>
-                    <li>Ice cream</li>
-                </ul>
-            </div>
-            <div class="col-5">
-                <ul style="list-style-image:url('{{ url_for('static', filename='pictures/star-fill.svg') }}');direction: ltr ">
-                    <li style="font-weight: bold;font-size: larger"> Hot Drinks</li>
-                    <li>French coffee</li>
-                    <li>Turkish coffee</li>
-                    <li>espresso coffee</li>
-                    <li>Late coffee</li>
-                    <li>Moca coffee</li>
-                    <li>Nescafe</li>
-                </ul>
-            </div>
+            {% for sex in data.sexes %}
+                <div class="col-5">
+                    <ul style="list-style-image:url({{ url_for('static', filename='pictures/star-fill.svg') }});direction: ltr ">
+                        <li style="font-weight: bold;font-size:larger">{{ sex.name }}</li>
+                        <li>{{ sex.price }}</li>
+                        <li>sex</li>
+                    </ul>
+                </div>
+            {% endfor %}
         </div>
+
     </div>
     </div>
 </div>
