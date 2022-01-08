@@ -2,7 +2,6 @@
 {% block  language %} {{ data.language }} {% endblock %}
 {% block title %} {{ data.title }} {% endblock %}
 {% block links %}
-    {#    <link rel="stylesheet" href="bootstrap.min.css">#}
     <link rel="icon" href="{{ url_for('static', filename='pictures/title_logo.jpg') }}" type = "image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
@@ -81,7 +80,7 @@
 {% endblock %}
 
 {% block body %}
-
+{{ super() }}
 <!-- menu header-->
 <div class="container-fluid  p-0">
     <div class="row base-color">
@@ -201,6 +200,7 @@
 <!--  end menu offer slide show cards -->
 
 {% endblock %}
+
 
 
 

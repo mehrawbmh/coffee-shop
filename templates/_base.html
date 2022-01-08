@@ -14,13 +14,16 @@
 <body>
 
 <div class="container-fluid">
-    {% include 'navbar.html' %}
-    {% include 'header.html' %}
+
     {% block body %}
+        {% include 'navbar.html' %}
+        {% include 'header.html' %}
     {% endblock %}
 
-    {% include 'footer.html' %}
-    {% include 'map.html' %}
+    {% block body_end %}
+        {% include 'footer.html' %}
+        {% include 'map.html' %}
+    {% endblock %}
 </div>
     {% block extra_footer %} {% endblock %}
     {% block js_end %}{% endblock %}
