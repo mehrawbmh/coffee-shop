@@ -28,7 +28,8 @@ basic_data = {
             'food': food,
             'dessert': dessert,
             'drink': drink
-    }
+    },
+    'links':['index', 'comment', ]
 }
 
 
@@ -46,3 +47,6 @@ def get_comment():
     db.session.commit()
 
     return redirect(url_for('index'))
+
+def get_orders(orders):
+    ...
