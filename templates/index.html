@@ -5,6 +5,8 @@
     <link rel="icon" href="{{ url_for('static', filename='pictures/title_logo.jpg') }}" type = "image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -132,7 +134,8 @@
                   <div class="container-fluid">
                       <div class="row justify-content-between">
                           <div class="col-12 col-md-2 align-self-center">
-                              <input type="button" class="btn btn-dark" value="order">
+                              <input type="button" class="btn btn-dark" value="order" onclick="order_adder({{ product.id }}, 1)">
+                              <input id="number_of_order" class="d-none" type="number" value="1" onchange="edit_order({{ product.id }}, this.value)">
                           </div>
                           <div class="col-12 col-md-6 col-lg-6">
                               <p>{{ product.name }} {{ product.price }}</p>
@@ -223,6 +226,23 @@
     </div>
 </div>
 <!--  end menu offer slide show cards -->
+<script>
+    var orders = []
+    function order_adder(menu_item_id, number){
+        console.log(menu_item_id)
+        $('#number_of_order').removeClass().addClass('d-block');
+        orders.push({'item_id':menu_item_id, 'number': number})
+    }
+    function edit_order(menu_item_id, number){
+        for (let order of orders) {
+            if (order.item_id === menu_item_id) {
+                order.number = number;
+                console.log(order , number)
+                break;
+            }
+        }
+    }
+</script>
 
 {% endblock %}
 
