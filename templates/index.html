@@ -265,18 +265,14 @@
                 for (let order of orders) {
                     if (order.item_id === menu_item_id) {
                         order.number = number;
-                        {#console.log(order, number)#}
+                        console.log(order, number)
                         break;
                     }
                 }
             }
         }
 
-        function send_order() {
-            $.ajax
-            {{
-             }}
-        }
+
     </script>
 
 {% endblock %}

@@ -25,11 +25,11 @@ basic_data = {
     'title': '~ cafe Game&Taste ~',
     'language': 'en-US',
     'menu_data': {
-            'food': food,
-            'dessert': dessert,
-            'drink': drink
+        'food': food,
+        'dessert': dessert,
+        'drink': drink
     },
-    'links':['index', 'comment', ]
+    'links': ['index', 'comment', 'order']
 }
 
 
@@ -48,5 +48,7 @@ def get_comment():
 
     return redirect(url_for('index'))
 
-def get_orders(orders):
-    ...
+
+def get_orders(orders:list):
+    if request.method == 'POST':
+        pass
