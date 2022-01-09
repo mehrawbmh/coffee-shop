@@ -6,6 +6,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 hash_func = hashlib.sha256()
 
+# TODO email and phone number validation
 
 @app.cli.command('create-cashier')
 def create_cashier():
@@ -22,6 +23,8 @@ def create_cashier():
                                    first_name=firstname, last_name=lastname)
             db.session.add(user_cashier)
             db.session.commit()
-            return 'user cashier successfully created'
+            print('user cashier successfully created')
+            return True
         except SQLAlchemyError as err:
-            return str((err.__dict__['orig']))
+            print((err.__dict__['orig']))
+            return False
