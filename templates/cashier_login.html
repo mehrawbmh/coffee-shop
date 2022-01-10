@@ -1,0 +1,64 @@
+{% extends '_base.html' %}
+
+{% block title %} {{ data.title }} {% endblock %}
+
+{% block sytle %}
+<style>
+.bg-img{
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    background-image: url({{ url_for('static', filename='pictures/cashier-login-bg.jpg') }});
+}
+.form-container{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    z-index: 2!important;
+    width: 80%;
+}
+.my-btn{
+    background-color: #C24914;
+    color: white;
+}
+.my-btn:hover{
+    background-color: #a94012;
+}
+.my-label{
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="bg-img"></div>
+
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-3 form-container text-center">
+
+            <form>
+              <div class="form-group">
+                <label for="username" class="my-label">Username</label>
+                <input type="text" class="form-control" id="username">
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="my-label">Password</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+
+              <button type="submit" class="btn my-btn">Login</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body_end %}
+{% endblock %}
