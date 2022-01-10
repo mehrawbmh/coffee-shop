@@ -5,8 +5,8 @@ from config import db
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
-    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    created_at = db.Column(db.DateTime, nullable=True, default=datetime.now)
+    updated_at = db.Column(db.DateTime, nullable=True, default=datetime.now)
     name = db.Column(db.String(20), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
