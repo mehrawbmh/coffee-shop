@@ -5,7 +5,7 @@ from models.products import Product
 from models.category import Category
 
 products = Product.query.all()
-main_categories = Category.query.filter_by(parent_id=None).all()
+# main_categories = Category.query.filter_by(parent_id=None).all()
 food, drink, dessert = [], [], []
 for p in products:
     cat_id = p.category_id

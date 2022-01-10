@@ -22,7 +22,7 @@
     <style>
         body {
             padding: 0;
-            background-color: rgb(227, 214, 199);
+            background-color: rgb(227, 214, 199)!important;
 
         }
 
@@ -155,7 +155,7 @@
                                         <p>{{ product.name }} {{ product.price }}</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
-                                        <img src="{{ product.img_url }}" alt="" width="100px">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +179,7 @@
                                         <p>{{ product.name }} {{ product.price }}</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
-                                        <img src="{{ product.img_url }}" alt="" width="100px">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                         <p>{{ product.name }} {{ product.price }}</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
-                                        <img src="{{ product.img_url }}" alt="" width="100px">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
                                     </div>
                                 </div>
                             </div>
@@ -212,12 +212,15 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+        {% include 'modal.html' %}
+    </div>
     <!--end menu collapse-->
 
     <!--  menu offer slide show cards -->
     <div class="container-fluid p-0">
 
-        <div class="row base-color" id="bottom_body">
+        <div class="row base-color" id="bottom_body" style="margin-top: 80px">
             <div class="col-4">
                 <img src="{{ url_for('static', filename='pictures/shake1.jpg') }}" alt="shake" id="img_day">
                 <h5 style="text-align: center" class="card-title bg-light text-danger">Special Shake</h5>
@@ -269,6 +272,15 @@
                         break;
                     }
                 }
+            }
+        }
+        function check_submit(){
+            if (!orders){
+                alert("You haven't ordered anything yet!")
+            }
+            else{
+                console.log("It must send an ajax to back and get basket info")
+                {#TODO handle error#}
             }
         }
 
