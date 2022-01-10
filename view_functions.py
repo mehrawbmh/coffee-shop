@@ -56,3 +56,8 @@ def get_comment():
 def get_orders(orders:list):
     if request.method == 'POST':
         pass
+
+
+def cashier_login():
+    basic_data['title'] = 'login'
+    return render_template('cashier_login.html', data=basic_data)
