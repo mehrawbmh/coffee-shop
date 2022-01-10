@@ -32,3 +32,8 @@ def get_comment():
     db.session.commit()
 
     return redirect(url_for('index'))
+
+
+def cashier_login():
+    basic_data['title'] = 'Login'
+    return render_template('cashier_login.html', data={**basic_data})
