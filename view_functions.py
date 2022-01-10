@@ -7,7 +7,10 @@ from models.category import Category
 products = Product.query.all()
 # main_categories = Category.query.filter_by(parent_id=None).all()
 food, drink, dessert = [], [], []
+discount_list = []
 for p in products:
+    if p.discount:
+        discount_list.append(p)
     cat_id = p.category_id
     main_cat = Category.query.filter_by(id=cat_id).first()
     parent_id = main_cat.parent_id
@@ -20,7 +23,7 @@ for p in products:
         dessert.append(p)
     else:
         raise Exception()  # TODO add exception
-
+discount_list = sorted(discount_list, key=lambda x: x.discount, reverse=True)
 basic_data = {
     'title': '~ cafe Game&Taste ~',
     'language': 'en-US',
@@ -29,12 +32,13 @@ basic_data = {
         'dessert': dessert,
         'drink': drink
     },
-    'links': ['index', 'comment', 'order']
+    'links': ['index', 'comment', 'order'],
+    'maximum_offer':5
 }
 
 
 def index():
-    return render_template('index.html', data=basic_data)
+    return render_template('index.html', data=basic_data, offers=discount_list)
 
 
 def get_comment():
