@@ -19,4 +19,3 @@ class Comment(db.Model):
     def __str__(self):
         return f"Comment number {self.id}: sender_name:{self.name}"
 
-# db.create_all()

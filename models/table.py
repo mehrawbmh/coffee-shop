@@ -10,3 +10,19 @@ class Table(db.Model):
     def __init__(self, table_num, position):
         self.table_number = table_num
         self.position = position
+
+
+def check_table(table_id):
+    table = Table.query.filter_by(id=table_id).first()
+    return table.in_use
+
+
+def change_table_status(table_id):
+    table = Table.query.filter_by(id=table_id).first()
+    if table.in_use:
+        table.in_use = False
+    else:
+        table.in_use = True
+    db.session.commit()
+    return f'status: 200'
+
