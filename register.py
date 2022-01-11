@@ -1,18 +1,16 @@
-import hashlib
+from core.utils import hash_generator
 from getpass import getpass
 from config import db, app
 from models.cashier import Cashier
 from sqlalchemy.exc import SQLAlchemyError
 
-hash_func = hashlib.sha256()
 
 # TODO email and phone number validation
 
 @app.cli.command('create-cashier')
 def create_cashier():
     username = input('>>> Username: ')
-    hash_func.update(bytes(getpass('>>> Password: '), 'utf-8'))
-    password = hash_func.hexdigest()
+    password = hash_generator(getpass('>>> Password: '))
     phone = input('>>> Phone number [must be unique]: ')
     email = input('>>> Email [must be unique]: ')
     firstname = ''
