@@ -19,4 +19,13 @@ class Comment(db.Model):
     def __str__(self):
         return f"Comment number {self.id}: sender_name:{self.name}"
 
-# db.create_all()
+
+def add_comment(**kwargs):
+    new_comment = Comment(
+        name=kwargs['name'],
+        email=kwargs['email'],
+        phone=kwargs['phone']
+    )
+    db.session.add(new_comment)
+    db.session.commit()
+    return 'status:200'

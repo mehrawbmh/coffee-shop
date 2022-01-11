@@ -23,10 +23,13 @@ def item_price(item_id: int):
 
 
 def add_item(**kwargs):
-    new_product = Product(name=kwargs['name'], category_id=kwargs['category_id'], price=kwargs['price'], discount=kwargs['discount'], img_url=kwargs['img_url'])
-    print('new item created')
+    new_product = Product(
+        name=kwargs['name'],
+        category_id=kwargs['category_id'],
+        price=kwargs['price'],
+        discount=kwargs['discount'],
+        img_url=kwargs['img_url'])
     db.session.add(new_product)
-    print('db.added')
     db.session.commit()
     return 'status:200'
 
