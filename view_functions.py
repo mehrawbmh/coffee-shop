@@ -3,7 +3,11 @@ from config import db
 from models.comment import Comment
 from models.products import Product
 from models.category import Category
+from models.cashier import Cashier
+from core.utils import hash_generator
 import json
+
+
 products = Product.query.all()
 # main_categories = Category.query.filter_by(parent_id=None).all()
 food, drink, dessert = [], [], []
@@ -71,4 +75,11 @@ def cashier_login():
     if request.method == 'GET':
         return render_template('cashier_login.html', data=basic_data)
     else:
-        pass
+        username = escape(request.form['username'])
+        password = hash_generator(escape(request.form['password']))
+        user = Cashier.query.filter_by(username=username).first()
+        if user:
+            if password == user.password:
+                return f'welcome {user.username}'
+        else:
+            return 'user not found'
