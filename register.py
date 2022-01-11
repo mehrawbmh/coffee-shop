@@ -1,27 +1,30 @@
-import argparse
-
+import hashlib
+from getpass import getpass
+from config import db, app
 from models.cashier import Cashier
-from config import db
+from sqlalchemy.exc import SQLAlchemyError
 
+hash_func = hashlib.sha256()
 
-if __name__ == '__main__':
+# TODO email and phone number validation
 
-    parser = argparse.ArgumentParser(description="Register")
-    parser.add_argument(
-        '-f',
-        '--first_name',
-        metavar='FirstName',
-        type=str,
-        action='store',
-        required=True,
-        help='Your first name'
-    )
-    parser.add_argument('-l', '--last_name', metavar='LastName', type=str, action='store', required=True, help='your last name')
-    parser.add_argument('-ph', '--phone_number', metavar='PhoneNumber', type=int, action='store', required=True, help='your phone number')
-    parser.add_argument('-e', '--email', metavar='Email', type=str, action='store', required=True, help='your email')
-    parser.add_argument('-p', '--password', metavar='Password', type=str, action='store', required=True, help='your password')
-    args = parser.parse_args()
-
-    u = Cashier(first_name=args.first_name, last_name=args.last_name, phone_number=args.phone_number, password=args.password, email=args.email)
-    db.session.add(u)
-    db.session.commit()
+@app.cli.command('create-cashier')
+def create_cashier():
+    username = input('>>> Username: ')
+    hash_func.update(bytes(getpass('>>> Password: '), 'utf-8'))
+    password = hash_func.hexdigest()
+    phone = input('>>> Phone number [must be unique]: ')
+    email = input('>>> Email [must be unique]: ')
+    firstname = ''
+    lastname = ''
+    if password and username:
+        try:
+            user_cashier = Cashier(username=username, password=password, email=email, phone_number=phone,
+                                   first_name=firstname, last_name=lastname)
+            db.session.add(user_cashier)
+            db.session.commit()
+            print('user cashier successfully created')
+            return True
+        except SQLAlchemyError as err:
+            print((err.__dict__['orig']))
+            return False
