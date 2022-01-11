@@ -1,9 +1,9 @@
-from flask import render_template, redirect, request, url_for, escape
+from flask import render_template, redirect, request, url_for, escape, Response
 from config import db
 from models.comment import Comment
 from models.products import Product
 from models.category import Category
-
+import json
 products = Product.query.all()
 # main_categories = Category.query.filter_by(parent_id=None).all()
 food, drink, dessert = [], [], []
@@ -53,9 +53,17 @@ def get_comment():
     return redirect(url_for('index'))
 
 
-def get_orders(orders:list):
+def get_orders():
+    order_list = []
     if request.method == 'POST':
-        pass
+        orders = request.values
+        for i in range(len(orders.keys())//2):
+            item_id = orders.get(f'data[{i}][item_id]')
+            order_number = orders.get(f'data[{i}][number]')
+            order_list.append((item_id, order_number))
+        for order in order_list:
+            pass
+        return Response('Its ok', 200)
 
 
 def cashier_login():
