@@ -11,6 +11,6 @@ class Category(db.Model):
         self.parent_id = parent_id
         self.name = name
 
-    def __str__(self):
+    def __repr__(self):
         return f"Category | {self.id} : {self.name}"
 

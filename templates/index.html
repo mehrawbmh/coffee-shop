@@ -2,10 +2,13 @@
 {% block  language %} {{ data.language }} {% endblock %}
 {% block title %} {{ data.title }} {% endblock %}
 {% block links %}
-    <link rel="icon" href="{{ url_for('static', filename='pictures/title_logo.jpg') }}" type = "image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='pictures/title_logo.jpg') }}" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    {#    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">#}
+{#    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>#}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}
@@ -18,25 +21,27 @@
 
 {% block sytle %}
     <style>
-        body{
-            padding:0;
+        body {
+            padding: 0;
+            background-color: rgb(227, 214, 199) !important;
 
         }
-        .base-color  {
+
+        .base-color {
             background-color: rgb(227, 214, 199);
         }
+
         #bottom_body {
             padding-top: 40px;
             padding-bottom: 30px;
         }
 
-        #img_day {
-            border: 4px dashed #6ac2a8;
-            width: 100%;
-            height: auto;
-            border-radius: 20px 20px 20px;
-            margin-bottom: 10px;
-        }
+        {##img_day {#}
+        {#    border: 4px dashed #6ac2a8;#}
+        {#    width: 100%;#}
+        {#    height: auto;#}
+        {#    border-radius: 20px 20px 20px;#}
+        {#    margin-bottom: 10px;}#}
 
         .beautiful_font {
             text-align: center;
@@ -65,139 +70,223 @@
             padding: 15px 25px 15px 25px;
         }
 
-        #bottom_body {
-            direction: rtl;
+        .my-nav {
+            color: white !important;
         }
-        .my-nav{
-            color: white!important;
-        }
-        .my-nav:hover{
-            color: #C24914!important;
-            text-decoration: underline!important;
+
+        .my-nav:hover {
+            color: #C24914 !important;
+            text-decoration: underline !important;
         }
     </style>
 
 {% endblock %}
 
 {% block body %}
-{{ super() }}
-<!-- menu header-->
-<div class="container-fluid  p-0">
-    <div class="row base-color">
-        <div class="col-12">
-               <h5 class="beautiful_font">
+    {{ super() }}
+    <!-- menu header-->
+    <div class="container-fluid  p-0">
+        <div class="row base-color">
+            <div class="col-12">
+                <h5 class="beautiful_font">
                     Enjoy Our Coffee shop
                 </h5>
                 <h2 style="text-align: center; width: 100%;font-family:Impact, serif">
                     Our Delicious Menu
                 </h2>
                 <hr style="width: 50%; border-color: #0c63e4; height: 8px; margin-bottom: 10px; border-style: dotted">
-        </div>
-    </div>
-</div>
-<!--end menu header-->
-
-<!-- Menu -->
-<div class="container-fluid base-color p-0 ">
-	<div class="row base-color">
-		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
-				<img data-toggle="tooltip" data-placement="top" title="Drink Menu" src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
-			</a>
-		</div>
-
-		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
-				<img data-toggle="tooltip" data-placement="top" title="Dessert Menu" src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
-			</a>
-		</div>
-
-		<div class="col-12 col-md-4 col-lg-4 text-center">
-			<a href="#menuCollapse" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
-				<img data-toggle="tooltip" data-placement="top" title="Food Menu" src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
-			</a>
-		</div>
-
-	</div>
-</div>
-<!--end Menu-->
-
-<!--menu collapse-->
-<div class="container-fluid p-0">
-    <div class="row base-color">
-        <div class="col">
-            <div class="collapse" id="menuCollapse">
-              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
-                  <div class="container-fluid">
-                      <div class="row justify-content-between">
-                          <div class="col-12 col-md-2 align-self-center">
-                              <input type="button" class="btn btn-dark" value="order">
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-6">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
-                          </div>
-                          <div class="col-12 col-md-2 col-lg-2">
-                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white">
-                  <div class="container-fluid">
-                      <div class="row justify-content-between">
-                          <div class="col-12 col-md-2 align-self-center">
-                              <input type="button" class="btn btn-dark" value="order">
-                          </div>
-                          <div class="col-12 col-md-6 col-lg-6">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at corporis enim eos, est eveniet expedita facilis fugiat illum necessitatibus nihil nulla perspiciatis placeat qui quis repudiandae vero voluptas voluptatum.</p>
-                          </div>
-                          <div class="col-12 col-md-2 col-lg-2">
-                              <img src="{{ url_for('static', filename='pictures/coffee3.jpg') }}" alt="" width="100px">
-                          </div>
-                      </div>
-                  </div>
-              </div>
             </div>
         </div>
     </div>
-</div>
-<!--end menu collapse-->
+    <!--end menu header-->
 
-<!--  menu offer slide show cards -->
-<div class="container-fluid p-0">
+    <!-- Menu -->
+    <div class="container-fluid base-color p-0 ">
+        <div class="row base-color">
+            <div class="col-12 col-md-4 col-lg-4 text-center">
+                <a href="#DrinkCollapse" data-toggle="collapse" role="button" aria-expanded="false"
+                   aria-controls="menuCollapse">
+                    <img data-toggle="tooltip" data-placement="top" title="Drink Menu"
+                         src="{{ url_for('static', filename='pictures/drink.png') }}" alt="drink" width="70px">
+                </a>
+            </div>
 
-    <div class="row base-color" id="bottom_body">
-    <div class="col-4">
-        <img src="{{ url_for('static', filename='pictures/shake1.jpg') }}" alt="shake" id="img_day">
-        <h5 style="text-align: center" class="card-title bg-light text-danger">Special Shake</h5>
-    </div>
-    <div class="col-8">
-        <h4 class="beautiful_font">Our special offer</h4>
-        <h3 style="text-align: center;width: 100%">Oreo Shake with caramel cream</h3>
-        <hr style="width: 80%; border-color: #0162ea; height: 8px; margin-bottom: 10px; border-style:dashed;!important;">
-        <p>
-            Our special offer for you is this shake. It has a great taste. you gotta try it!
-        </p>
-        <br>
-        <p id="menu">
-            You hava several choices to order. You can see our menu below:
-        </p>
+            <div class="col-12 col-md-4 col-lg-4 text-center">
+                <a href="#DessertCollapse" data-toggle="collapse" role="button" aria-expanded="false"
+                   aria-controls="menuCollapse">
+                    <img data-toggle="tooltip" data-placement="top" title="Dessert Menu"
+                         src="{{ url_for('static', filename='pictures/dessert.png') }}" alt="dessert" width="70px">
+                </a>
+            </div>
 
-        <div class="row" style="display: flex; justify-content: space-around">
-            {% for item in data.menu_data %}
-                <div class="col-5">
-                    <ul style="list-style-image:url({{ url_for('static', filename='pictures/star-fill.svg') }});direction: ltr ">
-                        <li style="font-weight: bold;font-size:larger">{{ item.name }}</li>
-                        <li>{{ item.price }}</li>
-                    </ul>
-                </div>
-            {% endfor %}
+            <div class="col-12 col-md-4 col-lg-4 text-center">
+                <a href="#FoodCollapse" data-toggle="collapse" role="button" aria-expanded="false"
+                   aria-controls="menuCollapse">
+                    <img data-toggle="tooltip" data-placement="top" title="Food Menu"
+                         src="{{ url_for('static', filename='pictures/food.png') }}" alt="food" width="80px">
+                </a>
+            </div>
+
         </div>
+    </div>
+    <!--end Menu-->
 
+    <!--menu collapse-->
+    <div class="container-fluid p-0">
+        <div class="row base-color">
+            <div class="col">
+                <div class="collapse" id="FoodCollapse">
+                    <h2 class="text-center text-warning bg-dark" style="margin:10px 0 10px 0">Food menu</h2>
+                    {% for product in data.menu_data.food %}
+                        <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
+                            <div class="container-fluid">
+                                <div class="row justify-content-between">
+                                    <div class="col-12 col-md-2 align-self-center">
+                                        <input type="button" class="btn btn-dark" value="order"
+                                               onclick="order_adder({{ product.id }}, 1)">
+                                        <input id="item{{ product.id }}" class="d-none" type="number" value="1"
+                                               onchange="edit_order({{ product.id }}, this.value)">
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6">
+                                        <p>{{ product.name }} {{ product.price }}</p>
+                                    </div>
+                                    <div class="col-12 col-md-2 col-lg-2">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="collapse" id="DrinkCollapse">
+                    <h2 class="text-center text-warning bg-dark" style="margin:10px 0 10px 0">Drink menu</h2>
+                    {% for product in data.menu_data.drink %}
+                        <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
+                            <div class="container-fluid">
+                                <div class="row justify-content-between">
+                                    <div class="col-12 col-md-2 align-self-center">
+                                        <input type="button" class="btn btn-dark" value="order"
+                                               onclick="order_adder({{ product.id }}, 1)">
+                                        <input id="item{{ product.id }}" class="d-none text-danger bg-dark"
+                                               type="number" value="1"
+                                               onchange="edit_order({{ product.id }}, this.value)">
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6">
+                                        <p>{{ product.name }} {{ product.price }}</p>
+                                    </div>
+                                    <div class="col-12 col-md-2 col-lg-2">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="collapse" id="DessertCollapse">
+                    <h2 class="text-center text-warning bg-dark" style="margin:10px 0 10px 0">Dessert menu</h2>
+                    {% for product in data.menu_data.dessert %}
+                        <div class="card card-body" style="background-color: #C24914; margin: 0.5rem;color: white;">
+                            <div class="container-fluid">
+                                <div class="row justify-content-between">
+                                    <div class="col-12 col-md-2 align-self-center">
+                                        <input type="button" class="btn btn-dark" value="order"
+                                               onclick="order_adder({{ product.id }}, 1)">
+                                        <input id="item{{ product.id }}" class="d-none" type="number" value="1"
+                                               onchange="edit_order({{ product.id }}, this.value)">
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-6">
+                                        <p>{{ product.name }} {{ product.price }}</p>
+                                    </div>
+                                    <div class="col-12 col-md-2 col-lg-2">
+                                        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="row justify-content-center">
+        {% include 'modal.html' %}
     </div>
-</div>
-<!--  end menu offer slide show cards -->
+    <!--end menu collapse-->
+
+    <!--  menu offer slide show cards -->
+    <div class="container-fluid p-0">
+
+        <div class="row base-color" id="bottom_body" style="margin-top: 40px">
+            <div class="col-4">
+                {#                <img src="{{ url_for('static', filename='pictures/shake1.jpg') }}" alt="shake" id="img_day">#}
+                <h4 style="text-align: center" class="card-title bg-dark text-warning">Special offers</h4>
+                {% include 'slideshow.html' %}
+            </div>
+            <div class="col-8">
+                <h4 class="beautiful_font">Our special offer</h4>
+                <h3 style="text-align: center;width: 100%">Oreo Shake with caramel cream</h3>
+                <hr style="width: 80%; border-color: #0162ea; height: 8px; margin-bottom: 10px; border-style:dashed;!important;">
+                <p>
+                    Here are our special offers for you. you gotta try it!
+                </p>
+                <p id="menu">
+                    We offer you several choices for different tastes! You can see some products with discount below.
+                </p>
+                <div class="row" style="display: flex; justify-content: space-evenly">
+                    {% for item in offers %}
+                        <div class="col-5">
+                            <ul style="list-style-image:url({{ url_for('static', filename='pictures/star-fill.svg') }})">
+                                <li style="font-weight: bold;font-size:larger">{{ item.name }}</li>
+                                <li>
+                                    <pre><del>{{ item.price }}</del>  <b>{{ item.price - item.discount }}</b></pre>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--  end menu offer slide show cards -->
+    <script>
+        var orders = []
+
+        function order_adder(menu_item_id, number) {
+            console.log(menu_item_id)
+            $(`#item${menu_item_id}`).removeClass().addClass('d-block');
+            orders.push({'item_id': menu_item_id, 'number': number})
+        }
+
+        function edit_order(menu_item_id, number) {
+            if (number <= 0) {
+                alert(`Wrong number of order! ${number}`)
+            } else {
+                for (let order of orders) {
+                    if (order.item_id === menu_item_id) {
+                        order.number = number;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function check_submit() {
+            if (!orders.length) {
+                alert("You haven't ordered anything yet!")
+            }
+            else{
+                send_order()
+                {#TODO handle error#}
+            }
+        }
+        function send_order() {
+            final_orders = {"data":orders}
+            req = $.post('/get_order',final_orders, function (){
+                console.log(orders, req.responseText)
+            })
+        }
+    </script>
 
 {% endblock %}
 
@@ -209,7 +298,7 @@
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
         var map = L.map('map').setView([29.642285, 52.459856], 13);
