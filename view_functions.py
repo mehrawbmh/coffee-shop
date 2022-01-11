@@ -67,5 +67,8 @@ def get_orders():
 
 
 def cashier_login():
-    basic_data['title'] = 'login'
-    return render_template('cashier_login.html', data=basic_data)
+    basic_data['title'] = 'Cashier | Login'
+    if request.method == 'GET':
+        return render_template('cashier_login.html', data=basic_data)
+    else:
+        pass
