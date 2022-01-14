@@ -85,7 +85,7 @@ def cashier_login():
         user = Cashier.query.filter_by(username=username).first()
         if user:
             if password == user.password:
-                resp = make_response(f'welcome {user.username}')
+                resp = make_response(f'welcome {user.username}')  # todo: redirect(url_for('cashier_dashbord'))
                 resp.set_cookie('user_logged_in_id', str(user.id))
                 return resp
         else:
