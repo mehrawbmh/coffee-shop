@@ -73,7 +73,12 @@ def get_orders():
 def cashier_login():
     basic_data['title'] = 'Cashier | Login'
     if request.method == 'GET':
-        return render_template('cashier_login.html', data=basic_data)
+        user_id = request.cookies.get('user_logged_in_id', None)
+        if user_id:
+            user = Cashier.query.filter_by(id=user_id).first()
+            return f'welcome {user.username}'  # todo: return render_template('cashier_dashbord.html', user=user)
+        else:
+            return render_template('cashier_login.html', data=basic_data)
     elif request.method == 'POST':
         username = escape(request.form['username'])
         password = hash_generator(escape(request.form['password']))
