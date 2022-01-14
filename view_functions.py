@@ -92,3 +92,9 @@ def cashier_login():
             return 'unknown user', 401
     else:
         return 'Method not allowed', 405
+
+
+def cashier_logout():
+    resp = make_response(redirect(url_for('login')))
+    resp.delete_cookie('user_logged_in_id')
+    return resp
