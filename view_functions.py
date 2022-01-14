@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request, url_for, escape, Response
+from flask import render_template, redirect, request, url_for, escape, Response, make_response
 from config import db
 from models.comment import Comment
 from models.products import Product
@@ -80,6 +80,8 @@ def cashier_login():
         user = Cashier.query.filter_by(username=username).first()
         if user:
             if password == user.password:
-                return f'welcome {user.username}'
+                resp = make_response(f'welcome {user.username}')
+                resp.set_cookie('user_logged_in_id', str(user.id))
+                return resp
         else:
             return 'user not found'
