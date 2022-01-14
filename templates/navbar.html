@@ -1,24 +1,68 @@
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
 <!-- Core theme CSS (includes Bootstrap)-->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container px-4">
-        <a class="navbar-brand" href="{{ url_for('index') }}" style="font-family:'Merienda', serif;color: #ff469e">Game & Taste Café</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto" style="padding-left: 200px;">
-                <li class="nav-item top_link"><a class="nav-link text-light" href="#header">Home</a></li>
-                <li class="nav-item top_link"><a class="nav-link text-danger" href="#bottom_body">Special offer</a></li>
-                <li class="nav-item top_link"><a class="nav-link text-success" href="#contact">Contact us</a></li>
-                <li class="nav-item top_link"><a class="nav-link text-warning" href="#main_body">menu</a></li>
-                <li class="nav-item top_link"><a class="nav-link text-primary" href="#menu">New Order</a></li>
-            </ul>
-        </div>
+<div class="main" style="padding:70px;margin-left: 1300px ">
+    <div class="display-flex-center py-1">
+        <button class="switcher btn btn-info">English</button>
     </div>
-</nav>
+</div>
+
+
+{#english#}
+
+<section class="English">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="{{ url_for('index') }}"
+               style="font-family:'Merienda', serif;color: white;">
+                <img src="{{ url_for('static', filename='pictures/brand-img.png') }}" alt="cafe" width="50px">
+                Game & Taste Café
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#header">Home</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#bottom_body">Special offer</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#contact">Contact us</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#main_body">menu</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#menu">New Order</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+{#farsi#}
+<section class="فارسی">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="{{ url_for('index') }}"
+               style="font-family:'Merienda', serif;color: white;">
+                <img src="{{ url_for('static', filename='pictures/brand-img.png') }}" alt="cafe" width="50px">
+                کافه لبخند
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#header">خانه</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#bottom_body">پیشنهاد ویژه</a>
+                    </li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#contact">تماس با ما</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#main_body">منو</a></li>
+                    <li class="nav-item top_link"><a class="nav-link my-nav" href="#menu">سفارش جدید</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
+<script src="/static/lan.js"></script>
 <script src="/static/scripts.js"></script>
