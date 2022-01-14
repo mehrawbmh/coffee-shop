@@ -74,7 +74,7 @@ def cashier_login():
     basic_data['title'] = 'Cashier | Login'
     if request.method == 'GET':
         return render_template('cashier_login.html', data=basic_data)
-    else:
+    elif request.method == 'POST':
         username = escape(request.form['username'])
         password = hash_generator(escape(request.form['password']))
         user = Cashier.query.filter_by(username=username).first()
@@ -84,4 +84,6 @@ def cashier_login():
                 resp.set_cookie('user_logged_in_id', str(user.id))
                 return resp
         else:
-            return 'user not found'
+            return 'unknown user', 401
+    else:
+        return 'Method not allowed', 405
