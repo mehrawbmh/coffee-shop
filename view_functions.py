@@ -7,7 +7,7 @@ from models.comment import Comment
 from models.products import Product
 from models.category import Category
 from models.cashier import Cashier
-from core.utils import hash_generator
+from core.utils import hash_generator, login_required
 
 
 products = Product.query.all()
@@ -128,5 +128,6 @@ def cashier_logout():
     return resp
 
 
+@login_required
 def cashier_panel():
     return render_template('cashier/index.html')
