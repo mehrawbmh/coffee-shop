@@ -8,4 +8,4 @@ app.add_url_rule('/login', 'login', cashier_login, methods=['GET', 'POST'])
 app.add_url_rule('/logout', 'logout', cashier_logout)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

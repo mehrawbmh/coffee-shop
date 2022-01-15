@@ -1,11 +1,13 @@
+import datetime
+
 from flask import render_template, redirect, request, url_for, escape, Response, make_response
 from config import db
+from models.baskets import Basket
 from models.comment import Comment
 from models.products import Product
 from models.category import Category
 from models.cashier import Cashier
 from core.utils import hash_generator
-import json
 
 
 products = Product.query.all()
@@ -58,16 +60,43 @@ def get_comment():
 
 
 def get_orders():
-    order_list = []
     if request.method == 'POST':
-        orders = request.values
-        for i in range(len(orders.keys())//2):
-            item_id = orders.get(f'data[{i}][item_id]')
-            order_number = orders.get(f'data[{i}][number]')
-            order_list.append((item_id, order_number))
-        for order in order_list:
-            pass
-        return Response('Its ok', 200)
+        orders = request.json
+        orders = {
+            "basket_items": [
+                {
+                    "item_id": 23,
+                    "number": 1
+                },
+                {
+                    "item_id": 24,
+                    "number": 3
+                }
+            ]
+        }
+        orders = orders.get("basket_items")
+        if orders:
+            now = datetime.datetime.now()
+            basket = {
+                "id": 1,
+                "table_id": 3,
+                "created_at": now,
+                "updated_at": now
+            }
+            orders = list(map(
+                lambda x: {
+                    "product_id": x.get("item_id"),
+                    "count": x.get("number"),
+                    "basket_id": basket.get("id")
+                },
+                orders
+            ))
+            database_session = db.session
+            database_session.bulk_save_objects(orders)
+            database_session.commit()
+            return Response('ok', 201)
+        return Response('failed', 400)
+    return Response('method not allowed', 405)
 
 
 def cashier_login():
@@ -76,7 +105,7 @@ def cashier_login():
         user_id = request.cookies.get('user_logged_in_id', None)
         if user_id:
             user = Cashier.query.filter_by(id=user_id).first()
-            return f'welcome {user.username}'  # todo: return render_template('cashier_dashbord.html', user=user)
+            return f'welcome {user.username}'  # todo: return render_temp   late('cashier_dashbord.html', user=user)
         else:
             return render_template('cashier_login.html', data=basic_data)
     elif request.method == 'POST':
