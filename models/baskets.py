@@ -16,6 +16,7 @@ class Basket(db.Model):
     table_id = db.Column(db.Integer, db.ForeignKey(Table.id))
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
+    is_finished = db.Column(db.Boolean, nullable=False, default=False)
 
     def __init__(self, table_id):
         self.table_id = table_id

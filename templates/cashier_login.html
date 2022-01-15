@@ -44,15 +44,15 @@
     <div class="row">
         <div class="col-3 form-container text-center">
 
-            <form>
+            <form action="{{ url_for('login') }}" method="POST">
               <div class="form-group">
                 <label for="username" class="my-label">Username</label>
-                <input type="text" class="form-control" id="username">
+                <input type="text" class="form-control" id="username" name="username">
               </div>
 
               <div class="form-group">
                 <label for="password" class="my-label">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" id="password" name="password">
               </div>
 
               <button type="submit" class="btn my-btn">Login</button>
