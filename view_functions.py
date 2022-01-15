@@ -104,7 +104,6 @@ def cashier_login():
     if request.method == 'GET':
         user_id = request.cookies.get('user_logged_in_id', None)
         if user_id:
-            user = Cashier.query.filter_by(id=user_id).first()
             return redirect(url_for('cashier_panel'))
         else:
             return render_template('cashier_login.html', data=basic_data)
