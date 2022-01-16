@@ -12,6 +12,10 @@ class Category(db.Model):
         self.name = name
         self.is_sub = is_sub
 
-    def __repr__(self):
-        return f"Category | {self.id} : {self.name}"
+    @property
+    def parent_name(self):
+        parent = Category.query.get(self.parent_id)
+        return parent.name
 
+    def __repr__(self):
+        return f"Category | id: {self.id} | name: {self.name}"
