@@ -1,3 +1,10 @@
+"""
+When a customer clicks to finalize their order, a basket will create first. then every order will be set in a basket item
+In other words, every basket could have one or more basket item.
+ in final step, the order and receipt will be created and just waiting to serve...
+"""
+
+
 from datetime import datetime
 from models.products import Product
 from models.table import Table
@@ -21,5 +28,5 @@ class Basket(db.Model):
     def __init__(self, table_id):
         self.table_id = table_id
 
-    def __str__(self):
+    def __repr__(self):
         return f"Basket | {self.id} : {self.table_id}"
