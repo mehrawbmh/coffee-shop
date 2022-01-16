@@ -24,5 +24,5 @@ def change_table_status(table_id):
     else:
         table.in_use = True
     db.session.commit()
-    return f'status: 200'
+    return 'OK',200
 
