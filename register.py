@@ -17,8 +17,9 @@ def create_cashier():
     lastname = ''
     if password and username:
         try:
-            user_cashier = Cashier(username=username, password=password, email=email, phone_number=phone,
-                                   first_name=firstname, last_name=lastname)
+            # user_cashier = Cashier(username=username, password=password, email=email, phone_number=phone,
+            #                        first_name=firstname, last_name=lastname)
+            user_cashier = Cashier(username, firstname, lastname, phone, email,password)
             db.session.add(user_cashier)
             db.session.commit()
             print('user cashier successfully created')

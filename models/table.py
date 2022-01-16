@@ -29,8 +29,3 @@ def change_table_status(table_id):
         table.in_use = True
     db.session.commit()
     return 'OK', 200
-
-
-new_t = Table(14, '12')
-db.session.add(new_t)
-db.session.commit()
