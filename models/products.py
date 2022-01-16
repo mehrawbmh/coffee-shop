@@ -33,13 +33,3 @@ def add_item(**kwargs):
     db.session.commit()
     return 'status:200'
 
-
-#print('product price test', item_price(item_id=23), sep='\n')
-# new_item = {
-#     'name': 'Orange juice',
-#     'category_id': 8,
-#     'price': 20000,
-#     'discount': 0,
-#     'img_url': 'https://images.herzindagi.info/image/2020/Nov/orange-juice-for-health.jpg'
-# }
-# print(add_item(**new_item))

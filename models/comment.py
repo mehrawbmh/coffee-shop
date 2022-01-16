@@ -16,6 +16,6 @@ class Comment(db.Model):
         self.phone = phone
         self.content = content
 
-    def __str__(self):
+    def __repr__(self):
         return f"Comment number {self.id}: sender_name:{self.name}"
 

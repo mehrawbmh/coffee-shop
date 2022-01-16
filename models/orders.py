@@ -14,10 +14,7 @@ class Order(db.Model):
     is_paid = db.Column(db.Boolean, nullable=False, default=False)
     is_finished = db.Column(db.Boolean, nullable=False, default=False)
 
-    def __init__(self, basket_id):
-        self.basket_id = basket_id
-
-    def __str__(self):
+    def __repr__(self):
         return f"Order | {self.id} : {self.basket_id}"
 
 

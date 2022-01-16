@@ -7,9 +7,13 @@ class Table(db.Model):
     position = db.Column(db.String(2), nullable=False, unique=True)
     in_use = db.Column(db.Boolean, default=False)
 
-    def __init__(self, table_num, position):
+    def __init__(self, table_num, position, in_use=None):
         self.table_number = table_num
         self.position = position
+        self.in_use = in_use
+
+    def __repr__(self):
+        return f"Table{self.id} : in_use_now?{self.in_use}"
 
 
 def check_table(table_id):
@@ -24,5 +28,9 @@ def change_table_status(table_id):
     else:
         table.in_use = True
     db.session.commit()
-    return 'OK',200
+    return 'OK', 200
 
+
+new_t = Table(14, '12')
+db.session.add(new_t)
+db.session.commit()
