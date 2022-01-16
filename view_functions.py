@@ -7,7 +7,7 @@ from models.comment import Comment
 from models.products import Product
 from models.category import Category
 from models.cashier import Cashier
-from core.utils import hash_generator
+from core.utils import hash_generator, login_required
 
 
 products = Product.query.all()
@@ -104,8 +104,7 @@ def cashier_login():
     if request.method == 'GET':
         user_id = request.cookies.get('user_logged_in_id', None)
         if user_id:
-            user = Cashier.query.filter_by(id=user_id).first()
-            return f'welcome {user.username}'  # todo: return render_temp   late('cashier_dashbord.html', user=user)
+            return redirect(url_for('cashier_panel'))
         else:
             return render_template('cashier_login.html', data=basic_data)
     elif request.method == 'POST':
@@ -114,7 +113,7 @@ def cashier_login():
         user = Cashier.query.filter_by(username=username).first()
         if user:
             if password == user.password:
-                resp = make_response(f'welcome {user.username}')  # todo: redirect(url_for('cashier_dashbord'))
+                resp = make_response(redirect(url_for('cashier_panel')))
                 resp.set_cookie('user_logged_in_id', str(user.id))
                 return resp
         else:
@@ -127,3 +126,8 @@ def cashier_logout():
     resp = make_response(redirect(url_for('login')))
     resp.delete_cookie('user_logged_in_id')
     return resp
+
+
+@login_required
+def cashier_panel():
+    return render_template('cashier/index.html')
