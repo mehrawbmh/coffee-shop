@@ -267,12 +267,13 @@
             if (number <= 0) {
                 alert(`Wrong number of order! ${number}`)
             } else {
-                for (let order of orders) {
-                    if (order.item_id === menu_item_id) {
-                        order.number = number;
-                        break;
+                for(let i=0;i<new_orders.length;i++){
+                    if(new_orders[i] === menu_item_id){
+                        new_orders[i+1] = number
+                        break
                     }
                 }
+                console.log(new_orders)
             }
         }
 
@@ -286,10 +287,18 @@
             }
         }
         function send_order() {
-            final_orders = {"data":orders}
-            req = $.post('/get_order',final_orders, function (){
-                console.log(orders, req.responseText)
-            })
+            {#req = $.post('/get_order',final_orders, function (){#}
+            {#    console.log(orders, req.responseText)#}
+            $.ajax({
+                url:'/get_order',
+                type: 'POST',
+                dataType : 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(new_orders),
+                success: function (){
+                    console.log(new_orders)
+                }
+            });
         }
     </script>
 

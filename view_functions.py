@@ -62,6 +62,7 @@ def get_comment():
 def get_orders():
     if request.method == 'POST':
         orders = request.json
+        print(orders, type(orders))
         orders = {
             "basket_items": [
                 {
