@@ -213,6 +213,10 @@
         </div>
     </div>
     <div class="row justify-content-center" id="order_finalize">
+        {% for table_num in data.tables %}
+            <input type="radio" name="table_select" id="Table{{ table_num }}" value="{{ table_num }}" style="width: 25%" onclick="set_table(this.value)">
+            <label for="Table{{ table_num }}" style="width: 25%">Table number {{ table_num }}</label>
+        {% endfor %}
         {% include 'modal.html' %}
     </div>
     <!--end menu collapse-->
@@ -256,11 +260,17 @@
     <!--  end menu offer slide show cards -->
     <script>
         var orders = []
-
+        var new_orders = []
+        var table_num = null
+        function set_table(number){
+            table_num = Number(number)
+        }
         function order_adder(menu_item_id, number) {
             console.log(menu_item_id)
             $(`#item${menu_item_id}`).removeClass().addClass('d-block');
             orders.push({'item_id': menu_item_id, 'number': number})
+            new_orders.push(menu_item_id)
+            new_orders.push(number)
         }
 
         function edit_order(menu_item_id, number) {
@@ -269,7 +279,7 @@
             } else {
                 for(let i=0;i<new_orders.length;i++){
                     if(new_orders[i] === menu_item_id){
-                        new_orders[i+1] = number
+                        new_orders[i+1] = Number(number)
                         break
                     }
                 }
@@ -278,7 +288,7 @@
         }
 
         function check_submit() {
-            if (!orders.length) {
+            if (!new_orders.length) {
                 alert("You haven't ordered anything yet!")
             }
             else{
@@ -289,16 +299,23 @@
         function send_order() {
             {#req = $.post('/get_order',final_orders, function (){#}
             {#    console.log(orders, req.responseText)#}
-            $.ajax({
+            if (!table_num){
+                alert("You should select a table first!")
+                return
+            }
+            new_orders.push(table_num)
+            let req = $.ajax({
                 url:'/get_order',
                 type: 'POST',
-                dataType : 'json',
                 contentType: 'application/json',
                 data: JSON.stringify(new_orders),
-                success: function (){
-                    console.log(new_orders)
+                success: function () {
+                    console.log(`successful:${new_orders}`)
+                    console.log(this.responseText)
                 }
             });
+            console.log('req status: ', req.status)
+            console.log('req text: ', req.responseText)
         }
     </script>
 
