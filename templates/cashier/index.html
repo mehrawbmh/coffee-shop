@@ -1,16 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+{% extends '_base.html' %}
+{% block links %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='cashier_style.css') }}">
-</head>
-<body>
-<div class="container-fluid">
+{% endblock %}
+{% block body %}
+    <div class="container-fluid">
 <!--     navbar-->
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Cashier Panel</a>
@@ -69,7 +63,5 @@
     </div>
 
 
-
 </div>
-</body>
-</html>
+{% endblock %}
