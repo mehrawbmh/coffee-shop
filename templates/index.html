@@ -38,12 +38,6 @@
             padding-bottom: 30px;
         }
 
-        {##img_day {#}
-        {#    border: 4px dashed #6ac2a8;#}
-        {#    width: 100%;#}
-        {#    height: auto;#}
-        {#    border-radius: 20px 20px 20px;#}
-        {#    margin-bottom: 10px;}#}
 
         .beautiful_font {
             text-align: center;
@@ -53,15 +47,6 @@
             width: 100%; /* test it later*/
         }
 
-        /*.slide_img {*/
-        /*    width: 100%;*/
-        /*    height: auto;*/
-        /*}*/
-
-        /*.nova {*/
-        /*    color: white;*/
-        /*    font-family: Nova Flat, serif;*/
-        /*}*/
 
         #bottom_body p {
             direction: ltr;
@@ -79,6 +64,9 @@
         .my-nav:hover {
             color: #C24914 !important;
             text-decoration: underline !important;
+        }
+        .collapse p:hover{
+        color: goldenrod;
         }
     </style>
 
@@ -212,15 +200,22 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center" id="order_finalize">
+    <div class="container-fluid p-0">
+    <div class="row base-color" id="order_finalize">
+    <div class="col-12">
+    <center>
         <h5 class="beautiful_font" style="margin-top: 30px!important;">Find a table to sit!</h5>
         <h2 style="text-align: center; width: 100%;font-family:Impact, serif">Our Available tables</h2>
         <hr class="bg-danger border-2 border-top border-primary">
         {% for table_num in data.tables %}
+            <label for="Table{{ table_num }}" style="width: 50%">Table number {{ table_num }}</label>
             <input type="radio" name="table_select" id="Table{{ table_num }}" value="{{ table_num }}" style="width: 25%" onclick="set_table(this.value)">
-            <label for="Table{{ table_num }}" style="width: 25%">Table number {{ table_num }}</label>
+{#            <label for="Table{{ table_num }}" style="width: 50%">Table number {{ table_num }}</label>#}
         {% endfor %}
         {% include 'modal.html' %}
+    </center>
+    </div>
+    </div>
     </div>
     <!--end menu collapse-->
 
