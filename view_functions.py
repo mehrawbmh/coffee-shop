@@ -68,7 +68,7 @@ def create_new_basket(orders):
     table_num = orders[-1]
     table_id = Table.query.filter_by(table_number=table_num).first().id
     basket_object = Basket.make_new(table_id)
-    for i in range(0, len(orders)-1, 2):
+    for i in range(0, len(orders) - 1, 2):
         product_id = orders[i]
         count = orders[i + 1]
         new_item = BasketItem(product_id, basket_object.id, count)
@@ -127,4 +127,4 @@ def cashier_logout():
 
 @login_required
 def cashier_panel():
-    return render_template('cashier/index.html')
+    return render_template('cashier/index.html', data={'title': "Dashboard"})

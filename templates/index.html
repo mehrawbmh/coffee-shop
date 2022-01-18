@@ -147,9 +147,9 @@
                                 <div class="row justify-content-between">
                                     <div class="col-12 col-md-2 align-self-center">
                                         <input type="button" class="btn btn-dark" value="order"
-                                               onclick="order_adder({{ product.id }}, 1)">
+                                               onclick="order_adder({{ product.id }},'food', {{ product.price }}, '{{ product.name }}')">
                                         <input id="item{{ product.id }}" class="d-none" type="number" value="1"
-                                               onchange="edit_order({{ product.id }}, this.value)">
+                                               onchange="edit_order({{ product.id }}, this.value, 'food', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
                                         <p>{{ product.name }} {{ product.price }}</p>
@@ -170,10 +170,10 @@
                                 <div class="row justify-content-between">
                                     <div class="col-12 col-md-2 align-self-center">
                                         <input type="button" class="btn btn-dark" value="order"
-                                               onclick="order_adder({{ product.id }}, 1)">
+                                               onclick="order_adder({{ product.id }}, 'drink', {{ product.price }}, '{{ product.name }}')">
                                         <input id="item{{ product.id }}" class="d-none text-danger bg-dark"
                                                type="number" value="1"
-                                               onchange="edit_order({{ product.id }}, this.value)">
+                                               onchange="edit_order({{ product.id }}, this.value, 'drink', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
                                         <p>{{ product.name }} {{ product.price }}</p>
@@ -194,9 +194,9 @@
                                 <div class="row justify-content-between">
                                     <div class="col-12 col-md-2 align-self-center">
                                         <input type="button" class="btn btn-dark" value="order"
-                                               onclick="order_adder({{ product.id }}, 1)">
+                                               onclick="order_adder({{ product.id }}, 'dessert', {{ product.price }}, '{{ product.name }}')">
                                         <input id="item{{ product.id }}" class="d-none" type="number" value="1"
-                                               onchange="edit_order({{ product.id }}, this.value)">
+                                               onchange="edit_order({{ product.id }}, this.value, 'dessert', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
                                         <p>{{ product.name }} {{ product.price }}</p>
@@ -265,15 +265,18 @@
         function set_table(number){
             table_num = Number(number)
         }
-        function order_adder(menu_item_id, number) {
-            console.log(menu_item_id)
+        function order_adder(menu_item_id, field, price, name) {
+            $(`#${field}_ordered`).append(`<div id='product_${name}'>${name}: 1x >>> <b>${price}</b></div>`)
             $(`#item${menu_item_id}`).removeClass().addClass('d-block');
-            orders.push({'item_id': menu_item_id, 'number': number})
+            {#orders.push({'item_id': menu_item_id, 'number': number})#}
             new_orders.push(menu_item_id)
-            new_orders.push(number)
+            new_orders.push(1)
         }
 
-        function edit_order(menu_item_id, number) {
+        function edit_order(menu_item_id, number, field, price, name) {
+            $(`#product_${name}`).remove()
+            $(`#${field}_ordered`).append(`<div id='product_${name}'>${name}: ${number}x >>> <b>${price*number}</b></div>`)
+
             if (number <= 0) {
                 alert(`Wrong number of order! ${number}`)
             } else {
