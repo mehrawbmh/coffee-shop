@@ -12,6 +12,7 @@ from models.baskets import BasketItem, Basket
 from core.utils import hash_generator, login_required
 from core.exceptions import FrontError, DBError
 
+
 products = Product.query.all()
 food, drink, dessert = [], [], []
 discount_list = []

@@ -4,6 +4,7 @@ from config import db, app
 from models.cashier import Cashier
 from sqlalchemy.exc import SQLAlchemyError
 import re as regex
+from log import *
 
 
 def phone_validation(phone: str):
@@ -33,6 +34,7 @@ def create_cashier():
     lastname = ''
     if not (email_validation(email) and phone_validation(phone)):
         print("Please Enter it in a valid format!")
+        logging.info('invalid input for creat_cashier function')
         return False
     if password and username:
         try:
@@ -42,7 +44,9 @@ def create_cashier():
             db.session.add(user_cashier)
             db.session.commit()
             print('user cashier successfully created')
+            logging.info('cashier registerd')
             return True
         except SQLAlchemyError as err:
             print((err.__dict__['orig']))
+            logging.error('database not responding')
             return False
