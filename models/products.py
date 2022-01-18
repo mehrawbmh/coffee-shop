@@ -16,20 +16,20 @@ class Product(db.Model):
     def __repr__(self):
         return f" id:{self.id} => name {self.name}"
 
+    @staticmethod
+    def item_price(item_id: int):
+        menu_item = Product.query.filter_by(id=f'{item_id}').first()
+        return menu_item.price - menu_item.discount
 
-def item_price(item_id: int):
-    menu_item = Product.query.filter_by(id=f'{item_id}').first()
-    return menu_item.price - menu_item.discount
-
-
-def add_item(**kwargs):
-    new_product = Product(
-        name=kwargs['name'],
-        category_id=kwargs['category_id'],
-        price=kwargs['price'],
-        discount=kwargs['discount'],
-        img_url=kwargs['img_url'])
-    db.session.add(new_product)
-    db.session.commit()
-    return 'status:200'
+    @staticmethod
+    def add_item(**kwargs):
+        new_product = Product(
+            name=kwargs['name'],
+            category_id=kwargs['category_id'],
+            price=kwargs['price'],
+            discount=kwargs['discount'],
+            img_url=kwargs['img_url'])
+        db.session.add(new_product)
+        db.session.commit()
+        return new_product
 

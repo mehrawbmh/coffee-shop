@@ -13,7 +13,6 @@ from core.utils import hash_generator, login_required
 from core.exceptions import FrontError, DBError
 
 products = Product.query.all()
-# main_categories = Category.query.filter_by(parent_id=None).all()
 food, drink, dessert = [], [], []
 discount_list = []
 for p in products:
@@ -141,3 +140,23 @@ def cashier_logout():
 @login_required
 def cashier_panel():
     return render_template('cashier/index.html', data=cashier_data)
+
+
+def add_product():
+    if request.method == 'GET':
+        category_list = Category.query.filter_by(is_sub=False).all()
+        return render_template('cashier/add_product.html', data=cashier_data, categories=category_list)
+    elif request.method == 'POST':
+        form = request.form
+        print(form)
+        return 'OK', 200
+    else:
+        return 'Method not allowed', 405
+
+"""
+       name=kwargs['name'],
+        category_id=kwargs['category_id'],
+        price=kwargs['price'],
+        discount=kwargs['discount'],
+        img_url=kwargs['img_url'])
+"""
