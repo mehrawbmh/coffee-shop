@@ -45,6 +45,11 @@ basic_data = {
     'links': ['index', 'comment', 'order'],
     'maximum_offer': 5
 }
+cashier_data = {
+    'title': 'Cashier',
+    'links': ['dashboard', 'add_product', 'home'],
+    'language': 'en_US'
+}
 
 
 def index():
@@ -69,6 +74,7 @@ def create_new_basket(orders):
     table_num = orders[-1]
     try:
         table_id = Table.query.filter_by(table_number=table_num).first().id
+        Table.change_table_status(table_id)
         basket_object = Basket.make_new(table_id)
         for i in range(0, len(orders) - 1, 2):
             product_id = orders[i]
@@ -85,18 +91,18 @@ def create_new_basket(orders):
 
 def get_orders():
     if request.method == 'POST':
-        # try:
-        orders = request.json
-        basket_response = create_new_basket(orders)
-        basket = basket_response[0]
-        total_price = basket_response[1]
-        total_with_discount = basket_response[2]
-        final_order = Order.add_order(total_price=total_price, total_price_discount=total_with_discount,
-                                      basket_id=basket.id)
-        print(final_order)
-        return Response('OK', 200)
-        # except Exception:
-        #     return Response('failed', 400)
+        try:
+            orders = request.json
+            basket_response = create_new_basket(orders)
+            basket = basket_response[0]
+            total_price = basket_response[1]
+            total_with_discount = basket_response[2]
+            final_order = Order.add_order(total_price=total_price, total_price_discount=total_with_discount,
+                                          basket_id=basket.id)
+            print(final_order)
+            return Response(f'{total_with_discount}, {Order.id}', 201)
+        except Exception:
+            return Response('failed', 400)
     return Response('method not allowed', 405)
 
 
@@ -131,4 +137,4 @@ def cashier_logout():
 
 @login_required
 def cashier_panel():
-    return render_template('cashier/index.html', data={'title': "Dashboard"})
+    return render_template('cashier/index.html', data=cashier_data)
