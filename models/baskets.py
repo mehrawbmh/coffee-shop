@@ -21,6 +21,14 @@ class BasketItem(db.Model):
         self.count = count
         self.basket_id = basket_id
 
+    def total_price(self):
+        product = Product.query.get(self.product_id)
+        return product.price * self.count
+
+    def total_price_with_discount(self):
+        product = Product.query.get(self.product_id)
+        return (product.price - product.discount) * self.count
+
     def __repr__(self):
         return f"BasketItem  {self.id} | related to basket with {self.basket_id=}"
 
@@ -37,6 +45,18 @@ class Basket(db.Model):
         self.created_at = created_at
         self.updated_at = updated_at
         self.is_finished = is_finished
+
+    @classmethod
+    def make_new(cls, table_id):
+        now = datetime.now()
+        new_obj = cls(table_id, now, now)
+        db.session.add(new_obj)
+        db.session.commit()
+        return new_obj
+
+    def finish(self):
+        self.is_finished = False
+        db.session.commit()
 
     def __repr__(self):
         return f"Basket | {self.id} : {self.table_id}"
