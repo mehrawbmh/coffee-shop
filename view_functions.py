@@ -1,14 +1,15 @@
-import datetime
-
-from flask import render_template, redirect, request, url_for, escape, Response, make_response
+from datetime import datetime
+from flask import render_template, redirect, request, url_for, escape, Response, make_response, flash
 from config import db
 from models.baskets import Basket
 from models.comment import Comment
+from models.orders import Order
 from models.products import Product
 from models.category import Category
 from models.cashier import Cashier
+from models.table import Table
+from models.baskets import BasketItem, Basket
 from core.utils import hash_generator, login_required
-
 
 products = Product.query.all()
 # main_categories = Category.query.filter_by(parent_id=None).all()
@@ -30,6 +31,7 @@ for p in products:
     else:
         raise Exception()  # TODO add exception
 discount_list = sorted(discount_list, key=lambda x: x.discount, reverse=True)
+available_tables = [table.table_number for table in Table.query.filter_by(in_use=False).all()]
 basic_data = {
     'title': '~ cafe Game&Taste ~',
     'language': 'en-US',
@@ -38,8 +40,9 @@ basic_data = {
         'dessert': dessert,
         'drink': drink
     },
+    'tables': available_tables,
     'links': ['index', 'comment', 'order'],
-    'maximum_offer':5
+    'maximum_offer': 5
 }
 
 
@@ -59,44 +62,37 @@ def get_comment():
     return redirect(url_for('index'))
 
 
+def create_new_basket(orders):
+    total_price = 0
+    with_discount = 0
+    table_num = orders[-1]
+    table_id = Table.query.filter_by(table_number=table_num).first().id
+    basket_object = Basket.make_new(table_id)
+    for i in range(0, len(orders)-1, 2):
+        product_id = orders[i]
+        count = orders[i + 1]
+        new_item = BasketItem(product_id, basket_object.id, count)
+        total_price += new_item.total_price()
+        with_discount += new_item.total_price_with_discount()
+        db.session.add(new_item)
+    db.session.commit()
+    return basket_object, total_price, with_discount
+
+
 def get_orders():
     if request.method == 'POST':
+        # try:
         orders = request.json
-        print(orders, type(orders))
-        orders = {
-            "basket_items": [
-                {
-                    "item_id": 23,
-                    "number": 1
-                },
-                {
-                    "item_id": 24,
-                    "number": 3
-                }
-            ]
-        }
-        orders = orders.get("basket_items")
-        if orders:
-            now = datetime.datetime.now()
-            basket = {
-                "id": 1,
-                "table_id": 3,
-                "created_at": now,
-                "updated_at": now
-            }
-            orders = list(map(
-                lambda x: {
-                    "product_id": x.get("item_id"),
-                    "count": x.get("number"),
-                    "basket_id": basket.get("id")
-                },
-                orders
-            ))
-            database_session = db.session
-            database_session.bulk_save_objects(orders)
-            database_session.commit()
-            return Response('ok', 201)
-        return Response('failed', 400)
+        basket_response = create_new_basket(orders)
+        basket = basket_response[0]
+        total_price = basket_response[1]
+        total_with_discount = basket_response[2]
+        final_order = Order.add_order(total_price=total_price, total_price_discount=total_with_discount,
+                                      basket_id=basket.id)
+        print(final_order)
+        return Response('OK', 200)
+        # except Exception:
+        #     return Response('failed', 400)
     return Response('method not allowed', 405)
 
 
