@@ -1,4 +1,4 @@
-from app import db
+from config import db
 
 
 class Comment(db.Model):
@@ -9,14 +9,13 @@ class Comment(db.Model):
     phone = db.Column(db.String(20))
     content = db.Column(db.Text, nullable=False)
 
-    def __init__(self, name, content, email='', field='', phone=''):
+    def __init__(self, name, content, email=None, field=None, phone=None):
         self.field = field
         self.name = name
         self.email = email
         self.phone = phone
         self.content = content
 
-    def __str__(self):
+    def __repr__(self):
         return f"Comment number {self.id}: sender_name:{self.name}"
 
-db.create_all()

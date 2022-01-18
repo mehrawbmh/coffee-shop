@@ -1,4 +1,4 @@
-from app import db
+from config import db
 
 
 class Table(db.Model):
@@ -7,6 +7,32 @@ class Table(db.Model):
     position = db.Column(db.String(2), nullable=False, unique=True)
     in_use = db.Column(db.Boolean, default=False)
 
-    def __init__(self, table_num, position):
+    def __init__(self, table_num, position, in_use=None):
         self.table_number = table_num
         self.position = position
+        self.in_use = in_use
+
+    def __repr__(self):
+        return f"Table with id:{self.id} : in_use_now?{self.in_use}"
+
+    @staticmethod
+    def check_table(table_id):
+        table = Table.query.filter_by(id=table_id).first()
+        return table.in_use
+
+    @staticmethod
+    def change_table_status(table_id):
+        table = Table.query.filter_by(id=table_id).first()
+        if table.in_use:
+            table.in_use = False
+        else:
+            table.in_use = True
+        db.session.commit()
+        return 'OK', 200
+
+    @staticmethod
+    def clear_all():
+        for t in Table.query.filter_by(in_use=True):
+            t.in_use = False
+        db.session.commit()
+
