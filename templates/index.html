@@ -152,7 +152,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'food', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -176,7 +176,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'drink', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -199,7 +199,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'dessert', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -213,6 +213,9 @@
         </div>
     </div>
     <div class="row justify-content-center" id="order_finalize">
+        <h5 class="beautiful_font" style="margin-top: 30px!important;">Find a table to sit!</h5>
+        <h2 style="text-align: center; width: 100%;font-family:Impact, serif">Our Available tables</h2>
+        <hr class="bg-danger border-2 border-top border-primary">
         {% for table_num in data.tables %}
             <input type="radio" name="table_select" id="Table{{ table_num }}" value="{{ table_num }}" style="width: 25%" onclick="set_table(this.value)">
             <label for="Table{{ table_num }}" style="width: 25%">Table number {{ table_num }}</label>
@@ -315,11 +318,10 @@
                 data: JSON.stringify(new_orders),
                 success: function () {
                     console.log(`successful:${new_orders}`)
-                    console.log(this.responseText)
+                    console.log(req.responseText)
                 }
             });
-            console.log('req status: ', req.status)
-            console.log('req text: ', req.responseText)
+
         }
     </script>
 
