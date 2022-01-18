@@ -38,12 +38,6 @@
             padding-bottom: 30px;
         }
 
-        {##img_day {#}
-        {#    border: 4px dashed #6ac2a8;#}
-        {#    width: 100%;#}
-        {#    height: auto;#}
-        {#    border-radius: 20px 20px 20px;#}
-        {#    margin-bottom: 10px;}#}
 
         .beautiful_font {
             text-align: center;
@@ -53,15 +47,6 @@
             width: 100%; /* test it later*/
         }
 
-        /*.slide_img {*/
-        /*    width: 100%;*/
-        /*    height: auto;*/
-        /*}*/
-
-        /*.nova {*/
-        /*    color: white;*/
-        /*    font-family: Nova Flat, serif;*/
-        /*}*/
 
         #bottom_body p {
             direction: ltr;
@@ -79,6 +64,9 @@
         .my-nav:hover {
             color: #C24914 !important;
             text-decoration: underline !important;
+        }
+        .collapse p:hover{
+        color: goldenrod;
         }
     </style>
 
@@ -152,7 +140,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'food', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -176,7 +164,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'drink', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -199,7 +187,7 @@
                                                onchange="edit_order({{ product.id }}, this.value, 'dessert', {{ product.price }}, '{{ product.name }}')">
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-6">
-                                        <p>{{ product.name }} {{ product.price }}</p>
+                                        <p style="font-weight: bolder; font-size: 24px;padding-top: 15px">{{ product.name }} ****  {{ product.price - product.discount }} Tooman</p>
                                     </div>
                                     <div class="col-12 col-md-2 col-lg-2">
                                         <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
@@ -212,12 +200,23 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center" id="order_finalize">
+    <div class="container-fluid p-0">
+    <div class="row base-color">
+    <div class="col-12" id="order_finalize">
+    <center>
+        <h5 class="beautiful_font" style="margin-top: 30px!important;">Find a table to sit!</h5>
+        <h2 style="text-align: center; width: 100%;font-family:Impact, serif">Our Available tables</h2>
+        <hr class="bg-danger border-2 border-top border-primary">
         {% for table_num in data.tables %}
+            <label for="Table{{ table_num }}" style="width: 50%">Table number {{ table_num }}</label>
             <input type="radio" name="table_select" id="Table{{ table_num }}" value="{{ table_num }}" style="width: 25%" onclick="set_table(this.value)">
-            <label for="Table{{ table_num }}" style="width: 25%">Table number {{ table_num }}</label>
+{#            <label for="Table{{ table_num }}" style="width: 50%">Table number {{ table_num }}</label>#}
         {% endfor %}
         {% include 'modal.html' %}
+    </center>
+    </div>
+    <div id="receipt" ></div>
+    </div>
     </div>
     <!--end menu collapse-->
 
@@ -315,11 +314,14 @@
                 data: JSON.stringify(new_orders),
                 success: function () {
                     console.log(`successful:${new_orders}`)
-                    console.log(this.responseText)
+                    $('#order_finalize').removeClass('col-12').addClass('col-8')
+                    $('#receipt').addClass('col-4').append(`<h5 class="beautiful_font" style="margin-top: 30px!important;">Thanks for your order!</h5>
+                                                            <h2 style="text-align: center; width: 100%;font-family:Impact, serif">Your final receipt</h2>
+                                                            <hr class="bg-danger border-2 border-top border-primary">
+                                                            <p style="font-size: large;color:brown;padding-top: 30px; text-align: center">${req.responseText}</p>`)
                 }
             });
-            console.log('req status: ', req.status)
-            console.log('req text: ', req.responseText)
+
         }
     </script>
 

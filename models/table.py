@@ -13,19 +13,26 @@ class Table(db.Model):
         self.in_use = in_use
 
     def __repr__(self):
-        return f"Table{self.id} : in_use_now?{self.in_use}"
+        return f"Table with id:{self.id} : in_use_now?{self.in_use}"
 
+    @staticmethod
+    def check_table(table_id):
+        table = Table.query.filter_by(id=table_id).first()
+        return table.in_use
 
-def check_table(table_id):
-    table = Table.query.filter_by(id=table_id).first()
-    return table.in_use
+    @staticmethod
+    def change_table_status(table_id):
+        table = Table.query.filter_by(id=table_id).first()
+        if table.in_use:
+            table.in_use = False
+        else:
+            table.in_use = True
+        db.session.commit()
+        return 'OK', 200
 
+    @staticmethod
+    def clear_all():
+        for t in Table.query.filter_by(in_use=True):
+            t.in_use = False
+        db.session.commit()
 
-def change_table_status(table_id):
-    table = Table.query.filter_by(id=table_id).first()
-    if table.in_use:
-        table.in_use = False
-    else:
-        table.in_use = True
-    db.session.commit()
-    return 'OK', 200

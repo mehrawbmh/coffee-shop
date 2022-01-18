@@ -34,6 +34,7 @@ for p in products:
         raise DBError('products', "The product category wasn't one of these three:[food,drink,dessert]")
 discount_list = sorted(discount_list, key=lambda x: x.discount, reverse=True)
 available_tables = [table.table_number for table in Table.query.filter_by(in_use=False).all()]
+available_tables.sort()
 basic_data = {
     'title': '~ cafe Game&Taste ~',
     'language': 'en-US',
@@ -45,6 +46,11 @@ basic_data = {
     'tables': available_tables,
     'links': ['index', 'comment', 'order'],
     'maximum_offer': 5
+}
+cashier_data = {
+    'title': 'Cashier',
+    'links': ['dashboard', 'add_product', 'home'],
+    'language': 'en_US'
 }
 
 
@@ -68,8 +74,10 @@ def create_new_basket(orders):
     total_price = 0
     with_discount = 0
     table_num = orders[-1]
+    table = Table.query.filter_by(table_number=table_num).first()
     try:
-        table_id = Table.query.filter_by(table_number=table_num).first().id
+        table_id = table.id
+        Table.change_table_status(table_id)
         basket_object = Basket.make_new(table_id)
         for i in range(0, len(orders) - 1, 2):
             product_id = orders[i]
@@ -81,7 +89,7 @@ def create_new_basket(orders):
         db.session.commit()
     except:
         raise FrontError("creating new instance of basket or basket items failed.")
-    return basket_object, total_price, with_discount
+    return basket_object, total_price, with_discount, table
 
 
 def get_orders():
@@ -92,10 +100,11 @@ def get_orders():
         basket = basket_response[0]
         total_price = basket_response[1]
         total_with_discount = basket_response[2]
+        table = basket_response[3]
         final_order = Order.add_order(total_price=total_price, total_price_discount=total_with_discount,
                                       basket_id=basket.id)
         print(final_order)
-        return Response('OK', 200)
+        return Response(f'ِFull price:{total_price}<br>Total price with discount:{total_with_discount}<br>Table number: {table.table_number}<br>Your table position:row {table.position[0]} section {table.position[1]}<br>Your receipt number: {table.id}', 201)
         # except Exception:
         #     return Response('failed', 400)
     return Response('method not allowed', 405)
@@ -132,4 +141,4 @@ def cashier_logout():
 
 @login_required
 def cashier_panel():
-    return render_template('cashier/index.html', data={'title': "Dashboard"})
+    return render_template('cashier/index.html', data=cashier_data)
