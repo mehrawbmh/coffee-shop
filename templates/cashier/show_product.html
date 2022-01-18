@@ -2,8 +2,10 @@
 {% block links %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 {% endblock %}
+
 {% block body  %}
 <div class="container-fluid">
+  <div class="container-fluid">
     <!--     navbar-->
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ url_for('cashier_panel') }}">Cashier Panel</a>
@@ -14,9 +16,44 @@
       </ul>
     </nav>
 <!--    end navbar-->
-<h2 style="text-align: center; color: #6a1a21">Add new items to menu</h2>
+    <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">category</th>
+      <th scope="col">discount</th>
+      <th scope="col">image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  {% for product in products %}
+    <tr>
+      <th scope="row">{{product.id}}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.discount }}</td>
+      <td>{{ categories[product.name] }}</td>
+      <td>
+        <img src="{{ product.img_url }}" alt="{{ product.name }}" width="100px">
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<h2 style="text-align: center; color: #6a1a21">edit items</h2>
 <div class="row justify-content-center align-items-center">
-<form action="{{ url_for('add_product') }}" method="POST">
+
+<form action="{{ url_for('edit_product') }}" method="POST">
+  <div class="mb-3">
+    <label for="product_id" class="form-label">Product ID</label>
+    <input type="number" class="form-control" id="product_id" name="id">
+  </div>
+
   <div class="mb-3">
     <label for="product_name" class="form-label">Product name</label>
     <input type="text" class="form-control" id="product_name" name="name">
@@ -32,18 +69,7 @@
     <input type="number" class="form-control" id="discount" name="discount">
   </div>
 
-  <div class="mb-3">
-    <label for="imgurl" class="form-label">Image link (url)</label>
-    <input type="url" class="form-control" id="imgurl" name="img_url">
-  </div>
-    <select name="category_id">
-        {% for cat in categories %}
-        <option value="{{ cat.id }}">
-            {{ cat.name }}
-        </option>
-        {% endfor %}
-    </select>
-  <button type="submit" class="btn btn-primary">Add item to database</button>
+  <button type="submit" class="btn btn-primary">Update</button>
 </form>
 </div>
 

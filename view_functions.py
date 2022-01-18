@@ -145,19 +145,45 @@ def cashier_panel():
 
 def add_product():
     if request.method == 'GET':
-        category_list = Category.query.filter_by(is_sub=False).all()
+        category_list = Category.query.filter_by(is_sub=True).all()
         return render_template('cashier/add_product.html', data=cashier_data, categories=category_list)
     elif request.method == 'POST':
         form = request.form
+        form = dict(form)
         print(form)
-        return 'OK', 200
+        Product.add_item(**form)
+        return Response('created', 201)
     else:
         return 'Method not allowed', 405
 
-"""
-       name=kwargs['name'],
-        category_id=kwargs['category_id'],
-        price=kwargs['price'],
-        discount=kwargs['discount'],
-        img_url=kwargs['img_url'])
-"""
+
+def show_product():
+    products = Product.query.all()
+    cat = {}
+    for p in products:
+        cat_item = Category.query.get(p.category_id)
+        cat.update({p.name: cat_item.name})
+
+    if request.method == 'GET':
+        return render_template('cashier/show_product.html', data=cashier_data, products=products, categories = cat)
+
+
+def edit_product():
+    if request.method == 'POST':
+        form = request.form
+        product = Product.query.filter_by(id=form['id']).first()
+        if product:
+            if form['name']:
+                product.name = form['name']
+            if form['price']:
+                product.price = form['price']
+            if form['discount']:
+                product.discount = form['discount']
+
+            db.session.commit()
+
+        return redirect(url_for('show_product'))
+    else:
+        return 'Method Not allowed', 405
+
+

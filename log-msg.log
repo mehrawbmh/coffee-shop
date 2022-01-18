@@ -18,3 +18,258 @@
 2022-01-18 18:01:46,047 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/food.png HTTP/1.1[0m" 304 -
 2022-01-18 18:01:46,110 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
 2022-01-18 18:01:46,218 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "GET /static/pictures/title_logo.jpg HTTP/1.1" 200 -
+2022-01-18 19:12:00,094 - INFO       -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-18 19:12:00,123 - INFO       -  * Restarting with stat
+2022-01-18 19:12:05,503 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:05] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2022-01-18 19:12:05,845 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:05] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 19:12:05,846 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:05] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 19:12:06,170 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:06] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 19:12:06,374 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:06] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 19:12:06,455 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:06] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 19:12:52,248 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET / HTTP/1.1" 200 -
+2022-01-18 19:12:52,333 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET /static/main.css HTTP/1.1" 200 -
+2022-01-18 19:12:52,643 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "[36mGET /static/scripts.js HTTP/1.1[0m" 304 -
+2022-01-18 19:12:52,704 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET /static/pictures/brand-img.png HTTP/1.1" 200 -
+2022-01-18 19:12:52,726 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "[36mGET /static/pictures/header.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:12:52,763 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET /static/pictures/dessert.png HTTP/1.1" 200 -
+2022-01-18 19:12:52,778 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET /static/pictures/drink.png HTTP/1.1" 200 -
+2022-01-18 19:12:52,826 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "GET /static/pictures/food.png HTTP/1.1" 200 -
+2022-01-18 19:12:52,995 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:52] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
+2022-01-18 19:12:53,946 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:12:53] "GET /static/pictures/title_logo.jpg HTTP/1.1" 200 -
+2022-01-18 19:13:51,011 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:13:51] "[35m[1mPOST /get_order HTTP/1.1[0m" 201 -
+2022-01-18 19:15:58,851 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:15:58] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:17:39,403 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:17:39] "GET /login HTTP/1.1" 200 -
+2022-01-18 19:17:39,429 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:17:39] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:17:40,280 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:17:40] "GET /static/pictures/cashier-login-bg.jpg HTTP/1.1" 200 -
+2022-01-18 19:17:40,370 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:17:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-01-18 19:18:38,527 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:38] "[32mGET /cashier-panel HTTP/1.1[0m" 302 -
+2022-01-18 19:18:38,533 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:38] "GET /login HTTP/1.1" 200 -
+2022-01-18 19:18:38,557 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:38] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:18:39,382 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:39] "[36mGET /static/pictures/cashier-login-bg.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:18:48,815 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:48] "[32mPOST /login HTTP/1.1[0m" 302 -
+2022-01-18 19:18:48,824 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:48] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:18:48,853 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:48] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:18:48,872 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:48] "GET /static/cashier_style.css HTTP/1.1" 200 -
+2022-01-18 19:18:58,391 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:58] "[32mGET /logout HTTP/1.1[0m" 302 -
+2022-01-18 19:18:58,397 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:58] "GET /login HTTP/1.1" 200 -
+2022-01-18 19:18:58,450 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:58] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:18:58,463 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:18:58] "[36mGET /static/pictures/cashier-login-bg.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:19:11,064 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:11] "[32mPOST /login HTTP/1.1[0m" 302 -
+2022-01-18 19:19:11,069 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:11] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:19:11,109 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:11] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:19:11,113 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:11] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:19:17,359 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:17] "[32mGET /logout HTTP/1.1[0m" 302 -
+2022-01-18 19:19:17,364 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:17] "GET /login HTTP/1.1" 200 -
+2022-01-18 19:19:17,407 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:17] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:19:17,425 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:17] "[36mGET /static/pictures/cashier-login-bg.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,064 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "GET / HTTP/1.1" 200 -
+2022-01-18 19:19:21,109 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,160 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/scripts.js HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,233 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/brand-img.png HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,237 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/header.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,256 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/dessert.png HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,258 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/food.png HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,259 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/drink.png HTTP/1.1[0m" 304 -
+2022-01-18 19:19:21,319 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:19:21] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
+2022-01-18 19:21:05,684 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:05] "[35m[1mPOST /get_order HTTP/1.1[0m" 201 -
+2022-01-18 19:21:18,742 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "GET / HTTP/1.1" 200 -
+2022-01-18 19:21:18,786 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,836 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/scripts.js HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,905 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/brand-img.png HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,911 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/header.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,915 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/drink.png HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,933 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/dessert.png HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,935 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/food.png HTTP/1.1[0m" 304 -
+2022-01-18 19:21:18,996 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:18] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
+2022-01-18 19:21:19,166 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:19] "[36mGET /static/pictures/title_logo.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:21:30,769 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:30] "GET /login HTTP/1.1" 200 -
+2022-01-18 19:21:30,832 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:30] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:21:30,848 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:30] "[36mGET /static/pictures/cashier-login-bg.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:21:36,326 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+2022-01-18 19:21:36,331 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:36] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:21:36,371 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:36] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:21:36,380 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:21:36] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:26:02,788 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:02] "[32mGET /login HTTP/1.1[0m" 302 -
+2022-01-18 19:26:02,802 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:02] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:26:02,829 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:02] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:26:02,836 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:02] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:26:03,527 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:03] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:26:11,956 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:11] "[32mGET /login HTTP/1.1[0m" 302 -
+2022-01-18 19:26:11,963 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:11] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:26:12,001 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:12] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:26:12,017 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:26:12] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:34:19,762 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "GET / HTTP/1.1" 200 -
+2022-01-18 19:34:19,863 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:34:19,953 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "[36mGET /static/scripts.js HTTP/1.1[0m" 304 -
+2022-01-18 19:34:19,955 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "[36mGET /static/pictures/brand-img.png HTTP/1.1[0m" 304 -
+2022-01-18 19:34:19,960 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "[36mGET /static/pictures/header.jpg HTTP/1.1[0m" 304 -
+2022-01-18 19:34:19,990 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:19] "[36mGET /static/pictures/drink.png HTTP/1.1[0m" 304 -
+2022-01-18 19:34:20,007 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:20] "[36mGET /static/pictures/dessert.png HTTP/1.1[0m" 304 -
+2022-01-18 19:34:20,013 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:20] "[36mGET /static/pictures/food.png HTTP/1.1[0m" 304 -
+2022-01-18 19:34:20,741 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:34:20] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
+2022-01-18 19:37:21,815 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:37:21] "[35m[1mPOST /get_order HTTP/1.1[0m" 201 -
+2022-01-18 19:56:42,232 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:56:42] "[32mGET /login HTTP/1.1[0m" 302 -
+2022-01-18 19:56:42,240 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:56:42] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:56:42,288 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:56:42] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:56:42,289 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:56:42] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:57:26,234 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:57:26] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 19:57:26,285 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:57:26] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:57:26,301 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:57:26] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 19:57:28,367 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:57:28] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 19:57:28,408 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:57:28] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:58:04,184 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:58:04] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 19:58:04,239 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:58:04] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 19:58:41,304 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:58:41] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 19:58:41,356 - INFO       - 127.0.0.1 - - [18/Jan/2022 19:58:41] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:02:08,110 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:02:08] "GET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=2 HTTP/1.1" 200 -
+2022-01-18 20:02:08,150 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:02:08] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:04:00,163 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:04:00] "GET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=1 HTTP/1.1" 200 -
+2022-01-18 20:04:00,220 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:04:00] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:04:43,902 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:04:43] "GET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=1 HTTP/1.1" 200 -
+2022-01-18 20:04:43,941 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:04:43] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:04:59,316 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:04:59] "POST /add_product HTTP/1.1" 200 -
+2022-01-18 20:05:44,125 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:05:44,467 - INFO       -  * Restarting with stat
+2022-01-18 20:05:57,466 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:05:57,615 - INFO       -  * Restarting with stat
+2022-01-18 20:06:09,728 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:06:09] "POST /add_product HTTP/1.1" 200 -
+2022-01-18 20:06:41,677 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:06:41,805 - INFO       -  * Restarting with stat
+2022-01-18 20:06:51,148 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:06:51] "POST /add_product HTTP/1.1" 200 -
+2022-01-18 20:08:18,513 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:08:18,652 - INFO       -  * Restarting with stat
+2022-01-18 20:08:47,287 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "[35m[1mPOST /add_product HTTP/1.1[0m" 500 -
+2022-01-18 20:08:47,356 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "GET /add_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:08:47,358 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "GET /add_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:08:47,384 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:08:47,511 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "GET /add_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:08:47,556 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:08:47] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:10:36,615 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:10:36] "[35m[1mPOST /add_product HTTP/1.1[0m" 500 -
+2022-01-18 20:10:36,654 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:10:36] "GET /add_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:10:36,664 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:10:36] "GET /add_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:10:36,699 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:10:36] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:10:36,730 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:10:36] "GET /add_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:10:56,808 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:10:56,962 - INFO       -  * Restarting with stat
+2022-01-18 20:11:08,247 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:08] "GET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=1 HTTP/1.1" 200 -
+2022-01-18 20:11:08,295 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:08] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:11:34,447 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:34] "[35m[1mPOST /add_product HTTP/1.1[0m" 500 -
+2022-01-18 20:11:34,482 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:34] "GET /add_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:11:34,484 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:34] "GET /add_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:11:34,504 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:34] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:11:34,575 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:34] "GET /add_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:11:47,936 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:47] "GET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=1 HTTP/1.1" 200 -
+2022-01-18 20:11:47,971 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:11:47] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:12:05,905 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:12:05] "[35m[1mPOST /add_product HTTP/1.1[0m" 201 -
+2022-01-18 20:12:54,795 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:12:54,937 - INFO       -  * Restarting with stat
+2022-01-18 20:15:23,906 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:15:24,090 - INFO       -  * Restarting with stat
+2022-01-18 20:15:39,712 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "[35m[1mGET /add_product?name=test&price=10000&discount=0&img_url=https%3A%2F%2Fwww.google.com%2Furl%3Fsa%3Di%26url%3Dhttps%253A%252F%252Fen.wikipedia.org%252Fwiki%252FHealthy_diet%26psig%3DAOvVaw0hdeRSoRzsbMYOWc9QOfSz%26ust%3D1642609918094000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CAsQjRxqFwoTCKjB3vfcu_UCFQAAAAAdAAAAABAD&category=1 HTTP/1.1[0m" 500 -
+2022-01-18 20:15:39,752 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "GET /add_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:15:39,753 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "GET /add_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:15:39,766 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:15:39,783 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "GET /add_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:15:39,822 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:15:39] "GET /add_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:18:03,956 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2022-01-18 20:18:03,990 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:03] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:18:03,995 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:03] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:18:12,535 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:12] "[35m[1mGET /cashier-panel HTTP/1.1[0m" 500 -
+2022-01-18 20:18:19,126 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "[35m[1mGET /cashier-panel HTTP/1.1[0m" 500 -
+2022-01-18 20:18:19,186 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:18:19,187 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:18:19,221 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:18:19,252 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:18:19,304 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:19] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:18:32,371 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:18:32,510 - INFO       -  * Restarting with stat
+2022-01-18 20:18:46,979 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:46] "[35m[1mGET /cashier-panel HTTP/1.1[0m" 500 -
+2022-01-18 20:18:47,031 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:47] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:18:47,031 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:47] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:18:47,061 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:47] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:18:47,078 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:47] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:18:47,134 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:18:47] "GET /cashier-panel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:23:08,587 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/run.py', reloading
+2022-01-18 20:23:08,760 - INFO       -  * Restarting with stat
+2022-01-18 20:23:17,366 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:23:17] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 20:23:17,424 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:23:17] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:23:17,431 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:23:17] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 20:23:22,147 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:23:22] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 20:23:22,181 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:23:22] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:24:15,718 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:24:15] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 20:24:15,764 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:24:15] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:24:17,368 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:24:17] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 20:24:17,413 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:24:17] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:24:17,429 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:24:17] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 20:29:43,055 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:29:43,206 - INFO       -  * Restarting with stat
+2022-01-18 20:29:53,983 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:29:53] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 20:29:54,040 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:29:54] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:29:56,379 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:29:56] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 20:29:56,416 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:29:56] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:29:56,421 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:29:56] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 20:30:04,830 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:04] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:30:04,864 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:04] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:30:20,535 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:20] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:30:20,567 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:20] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:30:32,956 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:32] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:30:32,998 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:32] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:30:56,048 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:56] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:30:56,099 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:30:56] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:31:23,856 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:31:23] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:31:23,902 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:31:23] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:36:07,389 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:36:07,532 - INFO       -  * Restarting with stat
+2022-01-18 20:36:21,867 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:21] "[35m[1mGET /show_product HTTP/1.1[0m" 500 -
+2022-01-18 20:36:21,913 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:21] "GET /show_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:36:21,915 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:21] "GET /show_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:36:21,942 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:21] "GET /show_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:36:21,989 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:21] "GET /show_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:36:22,064 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:22] "GET /show_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:36:58,478 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "[35m[1mGET /show_product HTTP/1.1[0m" 500 -
+2022-01-18 20:36:58,512 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "GET /show_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 20:36:58,530 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "GET /show_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 20:36:58,549 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "GET /show_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:36:58,595 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "GET /show_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 20:36:58,661 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:36:58] "GET /show_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 20:38:45,611 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:38:45,750 - INFO       -  * Restarting with stat
+2022-01-18 20:38:58,944 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:38:58] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:38:59,029 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:38:59] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:39:38,761 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:39:38,897 - INFO       -  * Restarting with stat
+2022-01-18 20:39:51,851 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:39:51] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:39:51,910 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:39:51] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:40:59,522 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:40:59] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:40:59,566 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:40:59] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:41:08,575 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:41:08] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 20:41:08,627 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:41:08] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:41:08,637 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:41:08] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 20:47:34,549 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 20:47:34,720 - INFO       -  * Restarting with stat
+2022-01-18 20:51:37,508 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:51:37] "GET /cashier-panel HTTP/1.1" 200 -
+2022-01-18 20:51:37,558 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:51:37] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:51:37,563 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:51:37] "[36mGET /static/cashier_style.css HTTP/1.1[0m" 304 -
+2022-01-18 20:51:48,425 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:51:48] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:51:48,463 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:51:48] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:52:05,965 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:52:05] "GET /add_product HTTP/1.1" 200 -
+2022-01-18 20:52:06,030 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:52:06] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 20:52:35,277 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:52:35] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 20:52:35,317 - INFO       - 127.0.0.1 - - [18/Jan/2022 20:52:35] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 21:02:37,873 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 21:02:38,038 - INFO       -  * Restarting with stat
+2022-01-18 21:02:52,624 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:02:52] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 21:02:52,678 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:02:52] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 21:03:20,826 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:20] "[35m[1mPOST /edit_product HTTP/1.1[0m" 500 -
+2022-01-18 21:03:20,870 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:20] "GET /edit_product?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-01-18 21:03:20,873 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:20] "GET /edit_product?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-01-18 21:03:20,914 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:20] "GET /edit_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 21:03:20,940 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:20] "GET /edit_product?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2022-01-18 21:03:21,012 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:03:21] "GET /edit_product?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-01-18 21:04:28,808 - INFO       -  * Detected change in '/home/manjinux/Desktop/maktab_python/flask-cafe-project/cafe_project/view_functions.py', reloading
+2022-01-18 21:04:28,947 - INFO       -  * Restarting with stat
+2022-01-18 21:04:43,494 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:04:43] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 21:04:43,533 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:04:43] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 21:04:51,628 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:04:51] "[32mPOST /edit_product HTTP/1.1[0m" 302 -
+2022-01-18 21:04:54,478 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:04:54] "GET /show_product HTTP/1.1" 200 -
+2022-01-18 21:04:54,523 - INFO       - 127.0.0.1 - - [18/Jan/2022 21:04:54] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
