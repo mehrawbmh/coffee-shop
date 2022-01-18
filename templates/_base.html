@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="{% block language %} fa-IR {% endblock %}">
+<html lang="{% block language %} en-US {% endblock %}">
 <head>
     {% include 'meta_tags.html' %}
-    <title>{% block title %} {{ page.title }} {% endblock %}</title>
+    <title>{% block title %} {{ data.title }} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}">
     {% block links %}
     {% endblock %}
