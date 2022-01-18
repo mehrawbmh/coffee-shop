@@ -17,5 +17,11 @@ class Category(db.Model):
         parent = Category.query.get(self.parent_id)
         return parent.name
 
+    def find_root_parent(self):
+        par = self
+        while par.is_sub:
+            par = Category.query.get(par.parent_id)
+        return par
+
     def __repr__(self):
         return f"Category | id: {self.id} | name: {self.name}"
