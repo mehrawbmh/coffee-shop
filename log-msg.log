@@ -6,3 +6,15 @@
 2022-01-18 17:47:23,009 - INFO       -  * Restarting with stat
 2022-01-18 17:47:30,394 - WARNING    -  * Debugger is active!
 2022-01-18 17:47:30,395 - INFO       -  * Debugger PIN: 763-082-838
+2022-01-18 18:01:33,628 - INFO       -  * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+2022-01-18 18:01:33,629 - INFO       -  * Restarting with stat
+2022-01-18 18:01:45,864 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:45] "GET / HTTP/1.1" 200 -
+2022-01-18 18:01:45,914 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:45] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+2022-01-18 18:01:45,966 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:45] "[36mGET /static/scripts.js HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,009 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/brand-img.png HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,022 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/header.jpg HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,034 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/drink.png HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,044 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/dessert.png HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,047 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/food.png HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,110 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "[36mGET /static/pictures/star-fill.svg HTTP/1.1[0m" 304 -
+2022-01-18 18:01:46,218 - INFO       - 127.0.0.1 - - [18/Jan/2022 18:01:46] "GET /static/pictures/title_logo.jpg HTTP/1.1" 200 -

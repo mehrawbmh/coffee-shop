@@ -1,0 +1,41 @@
+{% extends '_base.html' %}
+{% block links %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+{% block body  %}
+<div class="container-fluid">
+<h2 style="text-align: center; color: #6a1a21">Add new items to menu</h2>
+<div class="row justify-content-center align-items-center">
+<form action="{{ url_for('add_product') }}">
+  <div class="mb-3">
+    <label for="product_name" class="form-label">Product name</label>
+    <input type="text" class="form-control" id="product_name" name="name">
+  </div>
+
+    <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="number" class="form-control" id="price" name="price">
+  </div>
+
+    <div class="mb-3">
+    <label for="discount" class="form-label">Discount ( optional )</label>
+    <input type="number" class="form-control" id="discount" name="discount">
+  </div>
+
+  <div class="mb-3">
+    <label for="imgurl" class="form-label">Image link (url)</label>
+    <input type="url" class="form-control" id="imgurl" name="img_url">
+  </div>
+    <select name="category">
+        {% for cat in categories %}
+        <option value="{{ cat.id }}">
+            {{ cat.name }}
+        </option>
+        {% endfor %}
+    </select>
+  <button type="submit" class="btn btn-primary">Add item to database</button>
+</form>
+</div>
+
+</div>
+{% endblock %}
