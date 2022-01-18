@@ -1,0 +1,8 @@
+2022-01-18 17:44:29,878 - INFO       -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-18 17:44:29,880 - INFO       -  * Restarting with stat
+2022-01-18 17:44:37,387 - WARNING    -  * Debugger is active!
+2022-01-18 17:44:37,387 - INFO       -  * Debugger PIN: 763-082-838
+2022-01-18 17:47:22,935 - INFO       -  * Detected change in '/home/amir/Desktop/project1/cafe_project/register.py', reloading
+2022-01-18 17:47:23,009 - INFO       -  * Restarting with stat
+2022-01-18 17:47:30,394 - WARNING    -  * Debugger is active!
+2022-01-18 17:47:30,395 - INFO       -  * Debugger PIN: 763-082-838
