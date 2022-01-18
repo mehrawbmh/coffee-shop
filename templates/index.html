@@ -231,8 +231,8 @@
                 {% include 'slideshow.html' %}
             </div>
             <div class="col-8">
-                <h4 class="beautiful_font">Our special offer</h4>
-                <h3 style="text-align: center;width: 100%">Oreo Shake with caramel cream</h3>
+                <h3 class="beautiful_font">Our special offer</h3>
+                <h3 style="text-align: center;width: 100%">Up to 20% off with drinks in the menu!</h3>
 {#                <hr style="width: 80%; border-color: #0162ea; height: 8px; margin-bottom: 10px; border-style:dashed;!important;">#}
                 <hr class="bg-danger border-2 border-top border-primary">
 
@@ -240,7 +240,7 @@
                     Here are our special offers for you. you gotta try it!
                 </p>
                 <p id="menu">
-                    We offer you several choices for different tastes! You can see some products with discount below.
+                    We offer you several choices for different tastes! You can see some products with discount below:
                 </p>
                 <div class="row" style="display: flex;justify-content: center; flex-wrap: wrap;margin-left:10px">
                     {% for item in offers %}
@@ -278,25 +278,26 @@
             $(`#${field}_ordered`).append(`<div id='product_${name}'>${name}: ${number}x >>> <b>${price*number}</b></div>`)
 
             if (number <= 0) {
-                alert(`Wrong number of order! ${number}`)
-            } else {
-                for(let i=0;i<new_orders.length;i++){
-                    if(new_orders[i] === menu_item_id){
-                        new_orders[i+1] = Number(number)
-                        break
-                    }
-                }
-                console.log(new_orders)
+                alert(`Wrong number of order!( ${number} !)`)
+                number = 0
             }
+            for(let i=0;i<new_orders.length;i++){
+                if(new_orders[i] === menu_item_id){
+                    new_orders[i+1] = Number(number)
+                    break
+                }
+            }
+            console.log(new_orders)
+
         }
 
         function check_submit() {
             if (!new_orders.length) {
                 alert("You haven't ordered anything yet!")
+                throw "The order list is empty!"
             }
             else{
                 send_order()
-                {#TODO handle error#}
             }
         }
         function send_order() {

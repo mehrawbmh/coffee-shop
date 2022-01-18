@@ -10,6 +10,7 @@ from models.cashier import Cashier
 from models.table import Table
 from models.baskets import BasketItem, Basket
 from core.utils import hash_generator, login_required
+from core.exceptions import FrontError, DBError
 
 products = Product.query.all()
 # main_categories = Category.query.filter_by(parent_id=None).all()
@@ -29,7 +30,7 @@ for p in products:
     elif parent.name == 'dessert':
         dessert.append(p)
     else:
-        raise Exception()  # TODO add exception
+        raise DBError('products', "The product category wasn't one of these three:[food,drink,dessert]")
 discount_list = sorted(discount_list, key=lambda x: x.discount, reverse=True)
 available_tables = [table.table_number for table in Table.query.filter_by(in_use=False).all()]
 basic_data = {
@@ -66,16 +67,19 @@ def create_new_basket(orders):
     total_price = 0
     with_discount = 0
     table_num = orders[-1]
-    table_id = Table.query.filter_by(table_number=table_num).first().id
-    basket_object = Basket.make_new(table_id)
-    for i in range(0, len(orders) - 1, 2):
-        product_id = orders[i]
-        count = orders[i + 1]
-        new_item = BasketItem(product_id, basket_object.id, count)
-        total_price += new_item.total_price()
-        with_discount += new_item.total_price_with_discount()
-        db.session.add(new_item)
-    db.session.commit()
+    try:
+        table_id = Table.query.filter_by(table_number=table_num).first().id
+        basket_object = Basket.make_new(table_id)
+        for i in range(0, len(orders) - 1, 2):
+            product_id = orders[i]
+            count = orders[i + 1]
+            new_item = BasketItem(product_id, basket_object.id, count)
+            total_price += new_item.total_price()
+            with_discount += new_item.total_price_with_discount()
+            db.session.add(new_item)
+        db.session.commit()
+    except:
+        raise FrontError("creating new instance of basket or basket items failed.")
     return basket_object, total_price, with_discount
 
 
